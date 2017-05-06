@@ -1,72 +1,111 @@
 $(document).ready(function(){
-  const composers = [];
 
-  function createComposer(data){
-    info = data.query.pages[0];
-    newComposer = {
-      name: info.title,
-      thumbnail: info.thumbnail,
-      summary: info.extract
-    };
-    return newComposer;
-
-  }
-
-  function addComposerToPage(composer){
-    console.log(composer);
-    if(composer.thumbnail === undefined){
-      $("#composers").append('<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" class="img-responsive composer-image" alt="Generic placeholder thumbnail">');
+  var renderArtists = function(){
+    for(let i = 0; i < composers.length; i++){
+      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img src="' + composers[i].thumbnail + '" alt="' + composers[i].shortName + ' " style="width:160px; height:160px"><div class="caption"><h3>' + composers[i].shortName + '</h3></div></a>');
     }
-    else{
-      let $composerImage = $("#composers").append('<img src=' + composer.thumbnail.source + ' width="50" height="50" class="img-responsive composer-image" alt="Generic placeholder thumbnail">');
+  };
 
-    }
-    $("#composers").append("<h4>" + composer.name + "</h4>");
-  }
+  var populateSelectedArtist = function(artist){
+    $('#selected-artist-name').text(artist.shortName);
+    $('#selected-artist-image').attr("src", artist.thumbnail);
+    $('#artist-birth').text("Birth: " + artist.birth);
+    $('#artist-death').text("Death: " + artist.death);
+    $('#artist-genre').text("Genre: " + artist.genre.join(", "));
+    $('#artist-location').text("Location: " + artist.location.join(", "));
+  };
 
-  $('#composers').click(function(){
-    let $selectedComposer = $('#selected-composer');
+  var compareArtistByImage = function(imageSrc, artist){
+    return artist.thumbnail === imageSrc;
+  };
 
-    if($selectedComposer.text() === "hello"){
-      $selectedComposer.text("");
-    }
-    else{
-      $selectedComposer.text("hello");
-    }
-      $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&generator=images&format=json").done(function(data){      console.log(data);
-      var music = data.query.pages.filter(function(element){
-        return element.title.endsWith(".ogg");
-      });
-      if(music.length > 0){
-        $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&prop=imageinfo&titles=File%301%20%2D%20Vivaldi%20Spring%20mvt%201%20Allegro%20%2D%20John%20Harrison%20violin.ogg&iiprop=url&iiurlwidth=220&format=json").done(function(data2){
-          console.log(music[0].title);
-          console.log(data2);
-          // $("#selected-composition").attr("href", "https://en.wikipedia.org/wiki/" + music[0].title);
-        });
-      }
-      console.log(music);
+  var compareArtistByShortName = function(shortName, artist){
+    return artist.shortName === shortName;
+  };
 
-    });
-
+  $('#artists').on('click', '.caption', function(event){
+    let artist = composers.find(compareArtistByShortName.bind(this, $(event.currentTarget).text()));
+    populateSelectedArtist(artist);
   });
 
-  $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
-    console.log(data);
-    let newComposer = createComposer(data);
-    addComposerToPage(newComposer);
-    composers.push(newComposer);
-  });
-  $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Ludwig_van_Beethoven&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
-    let newComposer = createComposer(data);
-    addComposerToPage(newComposer);
-    composers.push(newComposer);
-
-  });
-
-
-
+  renderArtists();
+  populateSelectedArtist(composers[0]);
 });
+
+
+
+
+
+  // var updateComposers = function(data){
+  //   info = data.query.normalized;
+  //   image = data.query.pages;
+  //   for(let i = 0; i < info.length; i++){
+  //     let composer = composers.find(compareComposerByWikiPage.bind(this, info.from));
+  //     if (composer !== undefined){
+  //       composer.name = info.from;
+  //       if(image.thumbnail !== undefined){
+  //         composer.thumbnail = image.thumbnail.source;
+  //       }
+  //     }
+  //   }
+  //   console.log("updated composers : " + composers);
+  // };
+  //
+  // var getComposerPageNames = function(){
+  //   let pageNames = "";
+  //   for(let i = 0; i < composers.length; i++){
+  //     if(i > 0){
+  //       pageNames = pageNames + "|";
+  //     }
+  //     pageNames = pageNames + composers[i].wikipage;
+  //   }
+  //   console.log("page names: " + pageNames);
+  //   return pageNames;
+  // };
+  //
+  // var getComposerData = function(){
+  //   let pageNames = getComposerPageNames();
+  //   console.log(pageNames);
+  //   $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + pageNames + "&prop=pageimages&format=json").done(function(data){
+  //     console.log(data);
+  //     //updateComposers(data);
+  //     //renderComposers();
+  //   });
+  // };
+
+
+  // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&generator=images&format=json").done(function(data){      console.log(data);
+  //     var music = data.query.pages.filter(function(element){
+  //       return element.title.endsWith(".ogg");
+  //     });
+  //     if(music.length > 0){
+  //       $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&prop=imageinfo&titles=File%301%20%2D%20Vivaldi%20Spring%20mvt%201%20Allegro%20%2D%20John%20Harrison%20violin.ogg&iiprop=url&iiurlwidth=220&format=json").done(function(data2){
+  //         console.log(music[0].title);
+  //         console.log(data2);
+  //         // $("#selected-composition").attr("href", "https://en.wikipedia.org/wiki/" + music[0].title);
+  //       });
+  //     }
+  //     console.log(music);
+  //
+  //   });
+
+
+  // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
+  //   console.log(data);
+  //   let newComposer = createComposer(data);
+  //   addComposerToPage(newComposer);
+  //   composers.push(newComposer);
+  // });
+  // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Ludwig_van_Beethoven&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
+  //   let newComposer = createComposer(data);
+  //   addComposerToPage(newComposer);
+  //   composers.push(newComposer);
+  //
+  // });
+
+
+
 
 // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&generator=images&format=json").done(function(data){
 
-//$("#composers").append('<p>' + composer.summary + '</p>');
+// $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
