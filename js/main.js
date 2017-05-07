@@ -7,6 +7,7 @@ $(document).ready(function(){
   };
 
   var populateSelectedArtist = function(artist){
+    $('#artist-id').text(artist.wikipage);
     $('#selected-artist-name').text(artist.shortName);
     $('#selected-artist-image').attr("src", artist.thumbnail);
     $('#artist-birth').text("Birth: " + artist.birth);
@@ -31,8 +32,20 @@ $(document).ready(function(){
     return artist.shortName === shortName;
   };
 
-  var displayMoreArtistInfo = function(){
-    $('#more-artist-info').toggleClass('show');
+  var displayMoreArtistInfo = function(artist){
+    let artistId = $('#artist-id').text();
+
+    $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + artistId + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
+
+      let $moreArtistInfo = $('#more-artist-info');
+      $moreArtistInfo.text(data.query.pages[0].extract);
+      $("#more-popup").addClass('show');
+
+    });
+  };
+
+  var closeMoreArtistInfo = function(artist){
+    $("#more-popup").removeClass('show');
   };
 
   var addEventListeners = function(){
@@ -42,7 +55,8 @@ $(document).ready(function(){
       populateSelectedArtist(artist);
     });
 
-    $('.more-info').click(displayMoreArtistInfo);
+    $('#more-info').click(displayMoreArtistInfo);
+    $('#close-more-info').click(closeMoreArtistInfo);
   };
 
   addEventListeners();
@@ -53,43 +67,6 @@ $(document).ready(function(){
 
 
 
-
-  // var updateComposers = function(data){
-  //   info = data.query.normalized;
-  //   image = data.query.pages;
-  //   for(let i = 0; i < info.length; i++){
-  //     let composer = composers.find(compareComposerByWikiPage.bind(this, info.from));
-  //     if (composer !== undefined){
-  //       composer.name = info.from;
-  //       if(image.thumbnail !== undefined){
-  //         composer.thumbnail = image.thumbnail.source;
-  //       }
-  //     }
-  //   }
-  //   console.log("updated composers : " + composers);
-  // };
-  //
-  // var getComposerPageNames = function(){
-  //   let pageNames = "";
-  //   for(let i = 0; i < composers.length; i++){
-  //     if(i > 0){
-  //       pageNames = pageNames + "|";
-  //     }
-  //     pageNames = pageNames + composers[i].wikipage;
-  //   }
-  //   console.log("page names: " + pageNames);
-  //   return pageNames;
-  // };
-  //
-  // var getComposerData = function(){
-  //   let pageNames = getComposerPageNames();
-  //   console.log(pageNames);
-  //   $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + pageNames + "&prop=pageimages&format=json").done(function(data){
-  //     console.log(data);
-  //     //updateComposers(data);
-  //     //renderComposers();
-  //   });
-  // };
 
 
   // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&generator=images&format=json").done(function(data){      console.log(data);
@@ -114,12 +91,7 @@ $(document).ready(function(){
   //   addComposerToPage(newComposer);
   //   composers.push(newComposer);
   // });
-  // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Ludwig_van_Beethoven&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
-  //   let newComposer = createComposer(data);
-  //   addComposerToPage(newComposer);
-  //   composers.push(newComposer);
   //
-  // });
 
 
 
