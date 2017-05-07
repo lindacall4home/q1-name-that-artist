@@ -1,5 +1,6 @@
-var composers = [
+var artists = [
   {
+    type: 'Composer',
     wikipage: 'Johann_Sebastian_Bach',
     shortName: 'Bach',
     birth: '1685',
@@ -7,9 +8,14 @@ var composers = [
     genre: ['Baroque'],
     location: ['Germany'],
     thumbnail: './images/260px-Johann_Sebastian_Bach.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Prelude & Fuge 3",
+        file: 'Bach.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Ludwig_van_Beethoven',
     shortName: 'Beethoven',
     birth: '1770',
@@ -17,9 +23,14 @@ var composers = [
     genre: ['Classical', "Romantic"],
     location: ['Austria'],
     thumbnail: './images/Beethoven.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Sinfoni Number 5",
+        file: 'Beethoven.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Johannes_Brahms',
     shortName: 'Brahms',
     birth: '1833',
@@ -27,9 +38,14 @@ var composers = [
     genre: ["Romantic"],
     location: ['Austria', 'Germany'],
     thumbnail: './images/170px-JohannesBrahms.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'William_Byrd',
     shortName: 'Byrd',
     birth: '1540',
@@ -37,9 +53,14 @@ var composers = [
     genre: ['Renaissance'],
     location: ['England'],
     thumbnail: './images/220px-William_Byrd.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Johann_Sebastian_Bach',
     shortName: 'Dufay',
     birth: '1770',
@@ -47,84 +68,157 @@ var composers = [
     genre: ['Classical', "Romantic"],
     location: ['Austria'],
     thumbnail: './images/260px-Johann_Sebastian_Bach.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Wolfgang_Amadeus_Mozart',
     shortName: 'Mozart',
     thumbnail: './images/Croce-Mozart-Detail.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    birth: '1756',
+    death: '1791',
+    genre: ['Classical'],
+    location: ['Austria'],
+    works: [
+      {
+        title: "Divertimento K131",
+        file: 'Mozart.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Antonio_Vivaldi',
     shortName: 'Vivaldi',
     thumbnail: './images/Vivaldi.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Ludwig_van_Beethoven',
     shortName: 'Beethoven',
     thumbnail: './images/Beethoven.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Leonard_Bernstein',
     shortName: 'Bernstein',
     thumbnail: './images/Leonard_Bernstein_by_Jack_Mitchell.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Frédéric_Chopin',
     shortName: 'Chopin',
     thumbnail: './images/Frederic_Chopin_photo.jpeg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Wolfgang_Amadeus_Mozart',
     shortName: 'Mozart',
     thumbnail: './images/Croce-Mozart-Detail.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Antonio_Vivaldi',
     shortName: 'Vivaldi',
     thumbnail: './images/Vivaldi.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Johann_Sebastian_Bach',
     shortName: 'Bach',
     thumbnail: './images/260px-Johann_Sebastian_Bach.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Ludwig_van_Beethoven',
     shortName: 'Beethoven',
     thumbnail: './images/Beethoven.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Leonard_Bernstein',
     shortName: 'Bernstein',
     thumbnail: './images/Leonard_Bernstein_by_Jack_Mitchell.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Frédéric_Chopin',
     shortName: 'Chopin',
     thumbnail: './images/Frederic_Chopin_photo.jpeg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Wolfgang_Amadeus_Mozart',
     shortName: 'Mozart',
     thumbnail: './images/Croce-Mozart-Detail.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   },
   {
+    type: 'Composer',
     wikipage: 'Antonio_Vivaldi',
     shortName: 'Vivaldi',
     thumbnail: './images/Vivaldi.jpg',
-    audio: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'
+    works: [
+      {
+        title: "Toccata and Fugue in D minor",
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+    ]
   }
 ];

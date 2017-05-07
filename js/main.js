@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
   var renderArtists = function(){
-    for(let i = 0; i < composers.length; i++){
-      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img src="' + composers[i].thumbnail + '" alt="' + composers[i].shortName + ' " style="width:160px; height:160px"><div class="caption"><h3>' + composers[i].shortName + '</h3></div></a>');
+    for(let i = 0; i < artists.length; i++){
+      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img src="' + artists[i].thumbnail + '" alt="' + artists[i].shortName + ' " style="width:160px; height:160px"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
     }
   };
 
@@ -13,6 +13,14 @@ $(document).ready(function(){
     $('#artist-death').text("Death: " + artist.death);
     $('#artist-genre').text("Genre: " + artist.genre.join(", "));
     $('#artist-location').text("Location: " + artist.location.join(", "));
+    updateAudioPlayer(artist);
+  };
+
+  var updateAudioPlayer = function(artist){
+    $('#selected-work-title').text(artist.works[0].title);
+    let $audioSource = $('#selected-work-audio');
+    $audioSource.attr("src", "./audio/" + artist.works[0].file);
+    $audioSource.load();
   };
 
   var compareArtistByImage = function(imageSrc, artist){
@@ -23,13 +31,23 @@ $(document).ready(function(){
     return artist.shortName === shortName;
   };
 
-  $('#artists').on('click', '.caption', function(event){
-    let artist = composers.find(compareArtistByShortName.bind(this, $(event.currentTarget).text()));
-    populateSelectedArtist(artist);
-  });
+  var displayMoreArtistInfo = function(){
+    $('#more-artist-info').toggleClass('show');
+  };
 
+  var addEventListeners = function(){
+
+    $('#artists').on('click', '.caption', function(event){
+      let artist = artists.find(compareArtistByShortName.bind(this, $(event.currentTarget).text()));
+      populateSelectedArtist(artist);
+    });
+
+    $('.more-info').click(displayMoreArtistInfo);
+  };
+
+  addEventListeners();
   renderArtists();
-  populateSelectedArtist(composers[0]);
+  populateSelectedArtist(artists[0]);
 });
 
 

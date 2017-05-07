@@ -1,3 +1,39 @@
 .artist-fact{
   font-size: 18px;
 }
+
+.more-info{
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popuptext {
+    visibility: hidden;
+    width: 500px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    left: 20%;
+    margin-left: -80px;
+}
+
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
