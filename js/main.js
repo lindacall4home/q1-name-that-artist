@@ -6,14 +6,31 @@ $(document).ready(function(){
     }
   };
 
+  var displayMoreEraInfo = function(era){
+    $('#more-info').text(eras[era].description);
+    $("#more-popup").addClass('show');
+  };
+
+  var createEraLinks = function(artist){
+    $('.more-era-info').remove();
+    for (let i = 0; i < artist.era.length; i++){
+      let $clickableEra = $('<div class="click-text more-era-info" id="' + artist.era[i] + '-more">' + artist.era[i] + '</div>').appendTo('#artist-era');
+    }
+    $('.more-era-info').click(function(event){
+      displayMoreEraInfo($(event.currentTarget).text());
+    });
+
+  };
+
   var populateSelectedArtist = function(artist){
     $('#artist-id').text(artist.wikipage);
-    $('#selected-artist-name').text(artist.shortName);
+    $('#selected-artist-name').text(artist.fullName);
     $('#selected-artist-image').attr("src", artist.thumbnail);
     $('#artist-birth').text("Birth: " + artist.birth);
     $('#artist-death').text("Death: " + artist.death);
     $('#artist-genre').text("Genre: " + artist.genre.join(", "));
     $('#artist-location').text("Location: " + artist.location.join(", "));
+    createEraLinks(artist);
     updateAudioPlayer(artist);
   };
 
@@ -32,20 +49,30 @@ $(document).ready(function(){
     return artist.shortName === shortName;
   };
 
-  var displayMoreArtistInfo = function(artist){
+  var displayMoreArtistInfo = function(){
     let artistId = $('#artist-id').text();
 
     $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + artistId + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
 
-      let $moreArtistInfo = $('#more-artist-info');
-      $moreArtistInfo.text(data.query.pages[0].extract);
+      $('#more-info').text(data.query.pages[0].extract);
       $("#more-popup").addClass('show');
 
     });
   };
 
-  var closeMoreArtistInfo = function(artist){
+  var closeMoreArtistInfo = function(){
     $("#more-popup").removeClass('show');
+  };
+
+  var startTest = function(){
+    console.log('starting test');
+    $.getJSON("https://api.spotify.com/v1/search?q=mozart&type=track" ).done(function(data){
+
+      console.log(data);
+
+      $('.test-popup').addClass('test-show');
+    });
+
   };
 
   var addEventListeners = function(){
@@ -55,8 +82,10 @@ $(document).ready(function(){
       populateSelectedArtist(artist);
     });
 
-    $('#more-info').click(displayMoreArtistInfo);
+    $('#more-artist-info').click(displayMoreArtistInfo);
     $('#close-more-info').click(closeMoreArtistInfo);
+    $('#start-test').click(startTest);
+
   };
 
   addEventListeners();
