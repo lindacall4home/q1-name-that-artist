@@ -7,13 +7,15 @@ var artists = [
     birth: '1685',
     death: '1750',
     era: ['Baroque'],
-    genre: [],
+    genre: ['Baroque'],
     location: ['Germany'],
     thumbnail: './images/260px-Johann_Sebastian_Bach.jpg',
     works: [
       {
         title: "Prelude & Fuge 3",
-        file: 'Bach.mp3'}
+        file: 'Bach.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -30,7 +32,9 @@ var artists = [
     works: [
       {
         title: "Sinfoni Number 5",
-        file: 'Beethoven.mp3'}
+        file: 'Beethoven.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -47,7 +51,9 @@ var artists = [
     works: [
       {
         title: "",
-        file: ''}
+        file: '',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -64,7 +70,8 @@ var artists = [
     works: [
       {
         title: "",
-        file: ""
+        file: "",
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
   },
@@ -82,7 +89,9 @@ var artists = [
     works: [
       {
         title: "",
-        file: ''}
+        file: '',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -99,7 +108,9 @@ var artists = [
     works: [
       {
         title: "",
-        file: ''}
+        file: '',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -114,7 +125,9 @@ var artists = [
     works: [
       {
         title: "Divertimento K131",
-        file: 'Mozart.mp3'}
+        file: 'Mozart.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -125,7 +138,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -136,7 +151,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -147,7 +164,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -158,7 +177,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -169,7 +190,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -180,7 +203,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -191,7 +216,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -202,7 +229,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -213,7 +242,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -224,7 +255,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   },
   {
@@ -235,7 +268,9 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3'}
+        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+      }
     ]
   }
 ];

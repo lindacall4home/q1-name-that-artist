@@ -64,14 +64,45 @@ $(document).ready(function(){
     $("#more-popup").removeClass('show');
   };
 
-  var startTest = function(){
-    console.log('starting test');
-    $.getJSON("https://api.spotify.com/v1/search?q=mozart&type=track" ).done(function(data){
+  var ArtistTest = function(numberQuestions){
+    this.numberQuestions = numberQuestions;
+    this.currentQuestion = 1;
+    this.artistIndex = 0;
+    this.correctAnswers = 0;
+    this.quizArtists = [];
+    this.getNextArtist = function(){
+      return artists[this.artistIndex++];
+    };
+    for(i = 0; i < numberQuestions; i++){
+      this.quizArtists.push(this.getNextArtist());
+    }
+  };
 
-      console.log(data);
+  var displayQuestion = function(artistTest){
 
-      $('.test-popup').addClass('test-show');
-    });
+    var artist = artistTest.quizArtists[artistTest.currentQuestion];
+
+    $("#question-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
+    $("#question-audio-source").attr("src", artist.works[0].previewUrl);
+    $("#question-audio-source").parent().load();
+    let $answerButtons = $(".test-answer");
+    console.log($answerButtons);
+
+    $("#questionModal").addClass("modal");
+
+  };
+
+  var administerTest = function(){
+
+    var artistTest = new ArtistTest(10);
+    console.log(artistTest);
+    displayQuestion(artistTest);
+    artistTest.currentQuestion++;
+
+    // $.getJSON("https://api.spotify.com/v1/search?q=mozart&type=track" ).done(function(data){
+    //
+    //   $('.test-popup').addClass('test-show');
+    // });
 
   };
 
@@ -84,7 +115,7 @@ $(document).ready(function(){
 
     $('#more-artist-info').click(displayMoreArtistInfo);
     $('#close-more-info').click(closeMoreArtistInfo);
-    $('#start-test').click(startTest);
+    $('#start-test').click(administerTest);
 
   };
 

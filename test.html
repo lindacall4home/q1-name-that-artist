@@ -8,15 +8,73 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Name That Artist Quiz</title>
   </head>
 
   <body>
 
+    <!-- Question Modal -->
+    <div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-labelledby="question-modal-label">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="question-modal-label" style="color: #333;">Question 1 of 10</h4>
+          </div>
+          <div class="modal-body">
+            <h2 id="test-instruction">Listen to the following composition and identify the composer.</h2>
+            <div class="panel panel-default">
+              <div class="test-audio-container">
+                <audio controls="controls">
+                  Your browser does not support the <code>audio</code> element.
+                  <source id="question-audio-source" src="" type="audio/mp3">
+                </audio>
+              </div>
+
+              <form>
+                <div class="panel-body">
+                  <input type="radio" name="artist" value="Answer1" class="test-answer" ><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 1
+                  <input type="radio" name="artist-id" value="Answer2" class="test-answer"><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 2
+                  <input type="radio" name="artist" value="Answer3" class="test-answer"><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 3
+                  <input type="radio" name="artist" value="Answer4" class="test-answer"><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 4
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Quit Test</button>
+            <button type="button" class="btn btn-primary" style="background-color: #333;">Submit Answer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Question Modal -->
+
+    <!-- Answer Modal -->
+    <div class="modal fade" id="answer-modal" tabindex="-1" role="dialog" aria-labelledby="answer-modal-label">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="answer-modal-label" style="color: #333;">Answer 1 of 10</h4>
+          </div>
+          <div class="modal-body">
+            <h2 id="answer-text">Correct!</h2>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3>Mozart <img src="./images/170px-JohannesBrahms.jpg" alt="" class="test-img"></h3>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Quit Test</button>
+            <button type="button" class="btn btn-primary" style="background-color: #333;">Next Question</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Answer Modal -->
+
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
 
           <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -35,39 +93,16 @@
                   <li><a href="index.html">Learn</a></li>
                   <li><a href="test.html">Test</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                  <input type="text" class="form-control" placeholder="Search...">
-                </form>
               </div>
             </div>
           </nav>
-
 
           <div class="inner cover">
             <h1 class="cover-heading">Ready to test your knowledge?</h1>
             <p class="lead">Click to begin the test.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default" id="start-test">Start test</a>
+              <a href="#" class="btn btn-lg btn-default" id="start-test" data-toggle="modal" data-target="#question-modal">Start test</a>
             </p>
-          </div>
-          <div class="test-popup">
-            <h2 id="test-instruction">Listen to the following composition and identify the composer.</h2>
-            <div class="test-audio-container">
-              <audio controls="controls">
-                Your browser does not support the <code>audio</code> element.
-                <source src="https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null" type="audio/mp3">
-              </audio>
-            </div>
-            <div class="panel panel-default">
-              <form>
-                <div class="panel-body">
-                  <input type="radio" name="artist" value="Mozart" checked> Mozart <img src="./images/170px-JohannesBrahms.jpg" alt="" style="width:40px; height:40px;"><br>
-                  <input type="radio" name="artist-id" value="Beethoven"> Beethoven <img src="./images/170px-JohannesBrahms.jpg" alt="" style="width:40px; height:40px;"><br>
-                  <input type="radio" name="artist" value="Brahms">Brahms <img src="./images/170px-JohannesBrahms.jpg" alt="" style="width:40px; height:40px;"><br>
-                  <input type="radio" name="artist" value="Byrd">Byrd <img src="./images/170px-JohannesBrahms.jpg" alt="" style="width:40px; height:40px;">
-                </div>
-              </form>
-            </div>
           </div>
 
           <div class="mastfoot">
@@ -76,10 +111,9 @@
           </div>
 
         </div>
-
       </div>
-
     </div>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
