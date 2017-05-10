@@ -1,87 +1,6 @@
 $(document).ready(function(){
 
-  var renderArtists = function(){
-    for(let i = 0; i < artists.length; i++){
-      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img src="' + artists[i].thumbnail + '" alt="' + artists[i].shortName + ' " style="width:160px; height:160px"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
-    }
-  };
-
-  var displayMoreEraInfo = function(era){
-    $('#more-info').text(eras[era].description);
-    $("#more-popup").addClass('show');
-  };
-
-  var createEraLinks = function(artist){
-    $('.more-era-info').remove();
-    for (let i = 0; i < artist.era.length; i++){
-      let $clickableEra = $('<div class="click-text more-era-info" id="' + artist.era[i] + '-more">' + artist.era[i] + '</div>').appendTo('#artist-era');
-    }
-    $('.more-era-info').click(function(event){
-      displayMoreEraInfo($(event.currentTarget).text());
-    });
-
-  };
-
-  var populateSelectedArtist = function(artist){
-    $('#artist-id').text(artist.wikipage);
-    $('#selected-artist-name').text(artist.fullName);
-    $('#selected-artist-image').attr("src", artist.thumbnail);
-    $('#artist-birth').text("Birth: " + artist.birth);
-    $('#artist-death').text("Death: " + artist.death);
-    $('#artist-genre').text("Genre: " + artist.genre.join(", "));
-    $('#artist-location').text("Location: " + artist.location.join(", "));
-    $('.composer-audio').remove();
-    for(let i = 0; i < artist.works.length; i++){
-      console.log(artist.works[i].url);
-      $('#composer-works').append('<iframe class="composer-audio" id="composer-audio' + i + '" src="' + artist.works[i].url + '"></iframe>');
-    }
-    createEraLinks(artist);
-    updateAudioPlayer(artist);
-  };
-
-  var updateAudioPlayer = function(artist){
-    $('#selected-work-title').text(artist.works[0].title);
-    let $audioSource = $('#selected-work-audio');
-    $audioSource.attr("src", "./audio/" + artist.works[0].file);
-    $audioSource.load();
-  };
-
-  var compareArtistByImage = function(imageSrc, artist){
-    return artist.thumbnail === imageSrc;
-  };
-
-  var compareArtistByShortName = function(shortName, artist){
-    return artist.shortName === shortName;
-  };
-
-  var displayMoreArtistInfo = function(){
-    let artistId = $('#artist-id').text();
-
-    $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + artistId + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
-
-      $('#more-info').text(data.query.pages[0].extract);
-      $("#more-popup").addClass('show');
-
-    });
-  };
-
-  var closeMoreArtistInfo = function(){
-    $("#more-popup").removeClass('show');
-  };
-
-  var ArtistWork = function(workTitle, workUrl){
-    this.workTitle = workTitle;
-    this.workUrl = workUrl;
-  };
-
-  var ArtistQuestion = function(artist, artistWork){
-    this.artist = artist;
-    this.artistWork = artistWork;
-    this.studentAnswer = "";
-  };
-
-
-  var ArtistTest = function(numberQuestions){
+  function  ArtistTest(numberQuestions){
     this.numberQuestions = numberQuestions;
     this.currentQuestion = 1;
     this.artistIndex = 0;
@@ -97,57 +16,120 @@ $(document).ready(function(){
       let nextQuestion = new ArtistQuestion(nextArtist, this.getArtistWork(nextArtist));
       this.artistQuestions.push(nextQuestion);
     }
-  };
+  }
 
-  var recordAnswer = function(){
 
-  };
+  function renderArtists(){
+    for(let i = 0; i < artists.length; i++){
+      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img src="' + artists[i].thumbnail + '" alt="' + artists[i].shortName + ' " style="width:160px; height:160px"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
+    }
+  }
 
-  var gradeAnswer = function(){
+  function displayMoreEraInfo(era){
+    $('#more-info').text(eras[era].description);
+    $("#more-popup").addClass('show');
+  }
 
-  };
+  function createEraLinks(artist){
+    $('.more-era-info').remove();
+    for (let i = 0; i < artist.era.length; i++){
+      let $clickableEra = $('<div class="click-text more-era-info" id="' + artist.era[i] + '-more">' + artist.era[i] + '</div>').appendTo('#artist-era');
+    }
+    $('.more-era-info').click(function(event){
+      displayMoreEraInfo($(event.currentTarget).text());
+    });
 
-  var displayQuestion = function(){
+  }
 
-    var artist = artistTest.artistQuestions[artistTest.currentQuestion];
+  function populateSelectedArtist(artist){
+    $('#artist-id').text(artist.wikipage);
+    $('#selected-artist-name').text(artist.fullName);
+    $('#selected-artist-image').attr("src", artist.thumbnail);
+    $('#artist-birth').text("Birth: " + artist.birth);
+    $('#artist-death').text("Death: " + artist.death);
+    $('#artist-genre').text("Genre: " + artist.genre.join(", "));
+    $('#artist-location').text("Location: " + artist.location.join(", "));
+    $('.composer-audio').remove();
+    for(let i = 0; i < artist.works.length; i++){
+      console.log(artist.works[i].url);
+      $('#composer-works').append('<iframe class="composer-audio" id="composer-audio' + i + '" src="' + artist.works[i].url + '"></iframe>');
+    }
+    createEraLinks(artist);
+    updateAudioPlayer(artist);
+  }
+
+  function updateAudioPlayer(artist){
+    $('#selected-work-title').text(artist.works[0].title);
+    let $audioSource = $('#selected-work-audio');
+    $audioSource.attr("src", "./audio/" + artist.works[0].file);
+    $audioSource.load();
+  }
+
+  function compareArtistByImage(imageSrc, artist){
+    return artist.thumbnail === imageSrc;
+  }
+
+  function compareArtistByShortName(shortName, artist){
+    return artist.shortName === shortName;
+  }
+
+  function displayMoreArtistInfo(){
+    let artistId = $('#artist-id').text();
+
+    $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + artistId + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
+
+      $('#more-info').text(data.query.pages[0].extract);
+      $("#more-popup").addClass('show');
+
+    });
+  }
+
+  function closeMoreArtistInfo(){
+    $("#more-popup").removeClass('show');
+  }
+
+  function ArtistWork(workTitle, workUrl){
+    this.workTitle = workTitle;
+    this.workUrl = workUrl;
+  }
+
+  function ArtistQuestion(artist, artistWork){
+    this.artist = artist;
+    this.artistWork = artistWork;
+    this.studentAnswer = "";
+  }
+
+  function gradeAnswer(){
+    console.log("grading: " + artistTest.artistQuestions[artistTest.currentQuestion - 1].artist.fullName);
+    
+    var artistQuestion = artistTest.artistQuestions[artistTest.currentQuestion - 1];
+    $("#answer-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
+  }
+
+  function displayQuestion(){
+    console.log("question: " + artistTest.artistQuestions[artistTest.currentQuestion - 1].artist.fullName);
+
+    var artistQuestion = artistTest.artistQuestions[artistTest.currentQuestion - 1];
 
     $("#question-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
-    //$("#question-audio-source").attr("src", artist.works[0].previewUrl);
-    $("#question-audio-source").attr("src", "https://p.scdn.co/mp3-preview/3469fb94a4bdac274f86ff65c09b02a9e5a00d20?cid=null");
+    $("#question-audio-source").attr("src", artistQuestion.artistWork.previewUrl);
     $("#question-audio-source").parent().load();
     let correct = Math.floor(Math.random() * 4);
-    $('label[for=answer' + correct + ']').text(artist.fullName);
-    console.log("correct: " + correct + artist.fullName);
-    $('#answer-image' + correct).attr("src", artist.thumbnail);
+    $('label[for=answer' + correct + ']').text(artistQuestion.artist.fullName);
+    $('#answer-image' + correct).attr("src", artistQuestion.artist.thumbnail);
     for (let i = 0; i < 4; i++){
       if(i !== correct){
         let wrong = correct;
         while(wrong === correct){
           wrong = Math.floor(Math.random() * artists.length);
         }
-        console.log("wrong: " + wrong);
-        console.log("i: " + i);
-        console.log(artists[wrong].fullName);
         $('label[for=answer' + i + ']').text(artists[wrong].fullName);
         $('#answer-image' + wrong).attr("src", artists[wrong].thumbnail);
       }
     }
+  }
 
-    $("#questionModal").addClass("modal");
-
-  };
-
-  var administerTest = function(){
-
-
-    // $.getJSON("https://api.spotify.com/v1/search?q=mozart&type=track" ).done(function(data){
-    //
-    //   $('.test-popup').addClass('test-show');
-    // });
-
-  };
-
-  var addEventListeners = function(){
+  function addEventListeners(){
 
     $('#artists').on('click', '.caption', function(event){
       let artist = artists.find(compareArtistByShortName.bind(this, $(event.currentTarget).text()));
@@ -159,11 +141,10 @@ $(document).ready(function(){
     $('#start-test').click(displayQuestion);
     $('#submit-answer').click(gradeAnswer);
     $('.test-answer').click(function(event){
-      console.log($(event.currentTarget).next().next().text());
-      artistTest.artistQuestions[artistTest.currentQuestion] = $(event.currentTarget).next().next().text();
-
+      artistTest.artistQuestions[artistTest.currentQuestion - 1].studentAnswer = $(event.currentTarget).next().next().text();
+      console.log(artistTest);
     });
-  };
+  }
 
   var artistTest = new ArtistTest(10);
   addEventListeners();

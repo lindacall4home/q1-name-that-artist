@@ -83,12 +83,15 @@
   text-decoration: none;
 }
 
-.test-show {
-  visibility: visible;
-}
+
 
 .test-audio-container{
   text-align: center;
+}
+
+.modal-title,
+.modal-body{
+  color: #333;
 }
 
 #test-instruction{
@@ -112,11 +115,19 @@
 :focus {
   border-color: #FF0000;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
-  outline: black auto 5px !important; 
+  outline: black auto 5px !important;
 }
 
 .answers{
   width: 50%;
   margin-left: 35%;
   text-align: left;
+}
+
+#answer-correct{
+  color: rgba(31, 97, 17, 0.95);
+}
+
+#answer-wrong{
+  color: rgba(237, 36, 8, 0.95);
 }

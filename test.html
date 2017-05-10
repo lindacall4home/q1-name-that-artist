@@ -18,7 +18,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="question-modal-label" style="color: #333;">Question 1 of 10</h4>
+            <h4 class="modal-title" id="question-modal-label" >Question 1 of 10</h4>
           </div>
           <div class="modal-body">
             <h2 id="test-instruction">Listen to the following composition and identify the composer.</h2>
@@ -44,7 +44,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Quit Test</button>
-            <button type="button" id="submit-answer" class="btn btn-primary" style="background-color: #333;">Submit Answer</button>
+            <button type="button" id="submit-answer" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#answer-modal">Submit Answer</button>
           </div>
         </div>
       </div>
@@ -56,19 +56,23 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="answer-modal-label" style="color: #333;">Answer 1 of 10</h4>
+            <h4 class="modal-title" id="answer-modal-label" >Answer 1 of 10</h4>
           </div>
           <div class="modal-body">
-            <h2 id="answer-text">Correct!</h2>
+            <h2 id="answer-correct">Correct!
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></h2>
+            <h2 id="answer-wrong">Incorrect.
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></h2>
             <div class="panel panel-default">
               <div class="panel-body">
-                <h3>Mozart <img src="./images/170px-JohannesBrahms.jpg" alt="" class="test-img"></h3>
+                <img src="./images/170px-JohannesBrahms.jpg" alt="" class="test-img">
+                <h2>Mozart: "A little Night Music"</h2>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Quit Test</button>
-            <button type="button" class="btn btn-primary" style="background-color: #333;">Next Question</button>
+            <button type="button" class="btn btn-primary"  data-dismiss="modal" data-toggle="modal" data-target="#answer-modal">Next Question</button>
           </div>
         </div>
       </div>
