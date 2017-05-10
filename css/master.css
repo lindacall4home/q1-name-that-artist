@@ -40,11 +40,6 @@
   text-decoration: none;
 }
 
-.show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
 
 .composer-audio{
   width: 225px;
@@ -66,6 +61,21 @@
 .hidden-info{
   display: none;
 }
+
+.hide-grade{
+  display: none;
+}
+
+.show-grade{
+  display:block;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
 
 .test-popup {
   visibility: hidden;

@@ -33,10 +33,10 @@
               <form>
                 <div class="panel-body">
                   <div class="answers">
-                    <input type="radio" name="artist" value="answer0" class="test-answer" id="answer0"><img id="answer-image0" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer0">Answer 0</label><br>
-                    <input type="radio" name="artist" value="answer1" class="test-answer" id="answer1"><img id="answer-image1" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer1">Answer 1</label><br>
-                    <input type="radio" name="artist" value="answer2" class="test-answer" id="answer2"><img id="answer-image2" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer2">Answer 2</label><br>
-                    <input type="radio" name="artist" value="answer3" class="test-answer" id="answer3"><img id="answer-image3" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer3">Answer 3</label><br>
+                    <input type="radio" name="artist" value="answer0" class="select-artist" id="answer0"><img id="answer-image0" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer0">Answer 0</label><br>
+                    <input type="radio" name="artist" value="answer1" class="select-artist" id="answer1"><img id="answer-image1" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer1">Answer 1</label><br>
+                    <input type="radio" name="artist" value="answer2" class="select-artist" id="answer2"><img id="answer-image2" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer2">Answer 2</label><br>
+                    <input type="radio" name="artist" value="answer3" class="select-artist" id="answer3"><img id="answer-image3" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer3">Answer 3</label><br>
                   </div>
                 </div>
               </form>
@@ -65,19 +65,41 @@
             <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></h2>
             <div class="panel panel-default">
               <div class="panel-body">
-                <img src="./images/170px-JohannesBrahms.jpg" alt="" class="test-img">
-                <h2>Mozart: "A little Night Music"</h2>
+                <img id="correct-answer-image" src="./images/170px-JohannesBrahms.jpg" alt="" class="test-img">
+                <h2 id="correct-answer-title">Mozart: "A little Night Music"</h2>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Quit Test</button>
-            <button type="button" class="btn btn-primary"  data-dismiss="modal" data-toggle="modal" data-target="#answer-modal">Next Question</button>
+            <button type="button" id="next-question" class="btn btn-primary"  data-dismiss="modal" data-toggle="modal" data-target="#question-modal">Next Question</button>
+            <button type="button" id="display-score" class="btn btn-primary"  data-dismiss="modal" data-toggle="modal" data-target="#score-modal">Get Score</button>
           </div>
         </div>
       </div>
     </div>
     <!-- End Answer Modal -->
+
+    <!-- Score Modal -->
+    <div class="modal fade" id="score-modal" tabindex="-1" role="dialog" aria-labelledby="answer-modal-label">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" >Final Score</h4>
+          </div>
+          <div class="modal-body">
+            <h1 id="score-grade"><span  class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>Awesome!<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></h1>
+            <h2 id="final-score">You correctly identified 3 out of 3 Artists!</h2>
+            <h3 id="score-comment">You are a master at identifying composers!</h3>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Score Modal -->
+
 
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
