@@ -32,17 +32,19 @@
 
               <form>
                 <div class="panel-body">
-                  <input type="radio" name="artist" value="Answer1" class="test-answer" ><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 1
-                  <input type="radio" name="artist-id" value="Answer2" class="test-answer"><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 2
-                  <input type="radio" name="artist" value="Answer3" class="test-answer"><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 3
-                  <input type="radio" name="artist" value="Answer4" class="test-answer"><img class="test-image" src="./images/170px-JohannesBrahms.jpg" alt="">Answer 4
+                  <div class="answers">
+                    <input type="radio" name="artist" value="answer0" class="test-answer" id="answer0"><img id="answer-image0" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer0">Answer 0</label><br>
+                    <input type="radio" name="artist" value="answer1" class="test-answer" id="answer1"><img id="answer-image1" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer1">Answer 1</label><br>
+                    <input type="radio" name="artist" value="answer2" class="test-answer" id="answer2"><img id="answer-image2" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer2">Answer 2</label><br>
+                    <input type="radio" name="artist" value="answer3" class="test-answer" id="answer3"><img id="answer-image3" class="test-image" src="./images/170px-JohannesBrahms.jpg" alt=""><label for="answer3">Answer 3</label><br>
+                  </div>
                 </div>
               </form>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Quit Test</button>
-            <button type="button" class="btn btn-primary" style="background-color: #333;">Submit Answer</button>
+            <button type="button" id="submit-answer" class="btn btn-primary" style="background-color: #333;">Submit Answer</button>
           </div>
         </div>
       </div>
@@ -101,7 +103,7 @@
             <h1 class="cover-heading">Ready to test your knowledge?</h1>
             <p class="lead">Click to begin the test.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default" id="start-test" data-toggle="modal" data-target="#question-modal">Start test</a>
+              <button href="#" class="btn btn-lg btn-default" id="start-test" data-toggle="modal" data-target="#question-modal">Start Test</button>
             </p>
           </div>
 

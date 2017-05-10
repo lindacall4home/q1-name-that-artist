@@ -13,7 +13,7 @@ var artists = [
     works: [
       {
         title: "Prelude & Fuge 3",
-        file: 'Bach.mp3',
+        url:"https://open.spotify.com/embed?uri=spotify:track:4He4T440HuiOE0pAgLWYOm",
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -32,7 +32,7 @@ var artists = [
     works: [
       {
         title: "Sinfoni Number 5",
-        file: 'Beethoven.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -51,7 +51,7 @@ var artists = [
     works: [
       {
         title: "",
-        file: '',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -70,7 +70,7 @@ var artists = [
     works: [
       {
         title: "",
-        file: "",
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -89,7 +89,7 @@ var artists = [
     works: [
       {
         title: "",
-        file: '',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -108,37 +108,44 @@ var artists = [
     works: [
       {
         title: "",
-        file: '',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Wolfgang_Amadeus_Mozart',
-    shortName: 'Mozart',
-    thumbnail: './images/Croce-Mozart-Detail.jpg',
-    birth: '1756',
-    death: '1791',
-    genre: ['Classical'],
-    location: ['Austria'],
+    wikipage: 'George_Frideric_Handel',
+    shortName: 'Handel',
+    fullName: 'George Frideric Handel',
+    thumbnail: './images/220px-George_Frideric_Handel_by_Balthasar_Denner.jpg',
+    birth: '1865',
+    death: '1759',
+    era: ['Baroque'],
+    genre: ['Opera', 'Oratorio', 'Concerto' ],
+    location: ['Germany', 'England'],
     works: [
       {
-        title: "Divertimento K131",
-        file: 'Mozart.mp3',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Messiah, Part Two: Hallelujah",
+        url:"https://open.spotify.com/embed?uri=spotify:track:179VNrG3VdWEJNOuV0MJVv",
+        previewUrl:  "https://p.scdn.co/mp3-preview/601294d1cc6391448e7025e362514b01ec6dde4e?cid=null",
+      },
+      {
+        title: "Solomon: Act III - No.42 Symphony: arrival of the Queen of Sheba",
+        url:"https://open.spotify.com/embed?uri=spotify:track:6oSorVwBDQmckYOIMTTVxi",
+        previewUrl: "https://p.scdn.co/mp3-preview/3469fb94a4bdac274f86ff65c09b02a9e5a00d20?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
     wikipage: 'Ludwig_van_Beethoven',
-    shortName: 'Beethoven',
+    shortName: 'Haydn',
     thumbnail: './images/Beethoven.jpg',
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -151,7 +158,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -164,7 +171,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -177,7 +184,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -190,7 +197,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -203,7 +210,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -216,7 +223,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -229,7 +236,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -242,7 +249,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -255,7 +262,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]
@@ -268,7 +275,7 @@ var artists = [
     works: [
       {
         title: "Toccata and Fugue in D minor",
-        file: 'Bach_and_Joe_DeGeorge_-_05_-_Tocatta_in_D_Minor.mp3',
+        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
         previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
       }
     ]

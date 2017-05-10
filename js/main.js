@@ -30,6 +30,11 @@ $(document).ready(function(){
     $('#artist-death').text("Death: " + artist.death);
     $('#artist-genre').text("Genre: " + artist.genre.join(", "));
     $('#artist-location').text("Location: " + artist.location.join(", "));
+    $('.composer-audio').remove();
+    for(let i = 0; i < artist.works.length; i++){
+      console.log(artist.works[i].url);
+      $('#composer-works').append('<iframe class="composer-audio" id="composer-audio' + i + '" src="' + artist.works[i].url + '"></iframe>');
+    }
     createEraLinks(artist);
     updateAudioPlayer(artist);
   };
@@ -64,29 +69,69 @@ $(document).ready(function(){
     $("#more-popup").removeClass('show');
   };
 
+  var ArtistWork = function(workTitle, workUrl){
+    this.workTitle = workTitle;
+    this.workUrl = workUrl;
+  };
+
+  var ArtistQuestion = function(artist, artistWork){
+    this.artist = artist;
+    this.artistWork = artistWork;
+    this.studentAnswer = "";
+  };
+
+
   var ArtistTest = function(numberQuestions){
     this.numberQuestions = numberQuestions;
     this.currentQuestion = 1;
     this.artistIndex = 0;
-    this.correctAnswers = 0;
-    this.quizArtists = [];
+    this.artistQuestions = [];
     this.getNextArtist = function(){
       return artists[this.artistIndex++];
     };
+    this.getArtistWork = function(artist){
+      return artist.works[0];
+    };
     for(i = 0; i < numberQuestions; i++){
-      this.quizArtists.push(this.getNextArtist());
+      let nextArtist = this.getNextArtist();
+      let nextQuestion = new ArtistQuestion(nextArtist, this.getArtistWork(nextArtist));
+      this.artistQuestions.push(nextQuestion);
     }
   };
 
-  var displayQuestion = function(artistTest){
+  var recordAnswer = function(){
 
-    var artist = artistTest.quizArtists[artistTest.currentQuestion];
+  };
+
+  var gradeAnswer = function(){
+
+  };
+
+  var displayQuestion = function(){
+
+    var artist = artistTest.artistQuestions[artistTest.currentQuestion];
 
     $("#question-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
-    $("#question-audio-source").attr("src", artist.works[0].previewUrl);
+    //$("#question-audio-source").attr("src", artist.works[0].previewUrl);
+    $("#question-audio-source").attr("src", "https://p.scdn.co/mp3-preview/3469fb94a4bdac274f86ff65c09b02a9e5a00d20?cid=null");
     $("#question-audio-source").parent().load();
-    let $answerButtons = $(".test-answer");
-    console.log($answerButtons);
+    let correct = Math.floor(Math.random() * 4);
+    $('label[for=answer' + correct + ']').text(artist.fullName);
+    console.log("correct: " + correct + artist.fullName);
+    $('#answer-image' + correct).attr("src", artist.thumbnail);
+    for (let i = 0; i < 4; i++){
+      if(i !== correct){
+        let wrong = correct;
+        while(wrong === correct){
+          wrong = Math.floor(Math.random() * artists.length);
+        }
+        console.log("wrong: " + wrong);
+        console.log("i: " + i);
+        console.log(artists[wrong].fullName);
+        $('label[for=answer' + i + ']').text(artists[wrong].fullName);
+        $('#answer-image' + wrong).attr("src", artists[wrong].thumbnail);
+      }
+    }
 
     $("#questionModal").addClass("modal");
 
@@ -94,10 +139,6 @@ $(document).ready(function(){
 
   var administerTest = function(){
 
-    var artistTest = new ArtistTest(10);
-    console.log(artistTest);
-    displayQuestion(artistTest);
-    artistTest.currentQuestion++;
 
     // $.getJSON("https://api.spotify.com/v1/search?q=mozart&type=track" ).done(function(data){
     //
@@ -115,10 +156,16 @@ $(document).ready(function(){
 
     $('#more-artist-info').click(displayMoreArtistInfo);
     $('#close-more-info').click(closeMoreArtistInfo);
-    $('#start-test').click(administerTest);
+    $('#start-test').click(displayQuestion);
+    $('#submit-answer').click(gradeAnswer);
+    $('.test-answer').click(function(event){
+      console.log($(event.currentTarget).next().next().text());
+      artistTest.artistQuestions[artistTest.currentQuestion] = $(event.currentTarget).next().next().text();
 
+    });
   };
 
+  var artistTest = new ArtistTest(10);
   addEventListeners();
   renderArtists();
   populateSelectedArtist(artists[0]);
