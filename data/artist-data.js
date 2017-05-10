@@ -7,7 +7,7 @@ var artists = [
     birth: '1685',
     death: '1750',
     era: ['Baroque'],
-    genre: ['Baroque'],
+    genre: ['Concerto', 'Fugue', 'Polyphony'],
     location: ['Germany'],
     thumbnail: './images/260px-Johann_Sebastian_Bach.jpg',
     works: [
@@ -79,7 +79,7 @@ var artists = [
     type: 'Composer',
     wikipage: 'Guillaume_Du_Fay',
     shortName: 'Dufay',
-    fullName: 'Guillaume Du Fay',
+    fullName: 'Guillaume Dufay',
     birth: '1397',
     death: '1474',
     era: ['Renaissance'],

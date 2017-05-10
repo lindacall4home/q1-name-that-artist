@@ -36,6 +36,30 @@
       </div>
     </nav>
 
+    <!-- More Info Modal -->
+    <div class="modal fade" id="more-info-modal" tabindex="-1" role="dialog" aria-labelledby="more-modal-label">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="more-modal-label" >Bach</h4>
+          </div>
+          <div class="modal-body">
+            <blockquote>
+              <p id="more-info"></p>
+              <footer>
+                <cite title="Source Title">Wikipedia</cite>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End More Info Modal -->
+
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
@@ -68,24 +92,15 @@
                 <li class="artist-fact" id="artist-birth">Birth:</li>
                 <li class="artist-fact" id="artist-death">Death:</li>
                 <li class="artist-fact" id="artist-era">Era:</li>
-                <li class="artist-fact" id="artist-genre">Genre:</li>
+                <li class="artist-fact" id="artist-genre">Style:</li>
                 <li class="artist-fact" id="artist-location">Location:</li>
               </ul>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
               <h2 id="selected-artist-style">Style</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <div class="click-text" id="more-artist-info">more
-              </div>
-              <div class="popuptext" id="more-popup">
-                <blockquote>
-                  <p id="more-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                  <footer>
-                    <cite title="Source Title">Wikipedia</cite>
-                    <p class="click-text close-popup" id="close-more-info">close
-                    </p>
-                  </footer>
-                </blockquote>
+                <p id="artist-style-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <cite title="Source Title">Wikipedia</cite>
+              <div class="click-text" id="more-artist-info" data-toggle="modal" data-target="#more-info-modal">more
               </div>
             </div>
             <div id="composer-works" class="col-xs-12 col-sm-6 col-md-3">

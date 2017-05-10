@@ -7,20 +7,24 @@ $(document).ready(function(){
     }
   }
 
-  function displayMoreEraInfo(era){
-    $('#more-info').text(eras[era].description);
-    $("#more-popup").addClass('show');
-  }
-
   function createEraLinks(artist){
     $('.more-era-info').remove();
     for (let i = 0; i < artist.era.length; i++){
-      let $clickableEra = $('<div class="click-text more-era-info" id="' + artist.era[i] + '-more">' + artist.era[i] + '</div>').appendTo('#artist-era');
+      $('<div class="click-text more-era-info" id="' + artist.era[i] + '-more" data-toggle="modal" data-target="#more-info-modal">' + artist.era[i] + '</div>').appendTo('#artist-era');
     }
     $('.more-era-info').click(function(event){
       displayMoreEraInfo($(event.currentTarget).text());
     });
+  }
 
+  function createGenreLinks(artist){
+    $('.more-genre-info').remove();
+    for (let i = 0; i < artist.genre.length; i++){
+      $('<div class="click-text more-genre-info" id="' + artist.genre[i] + '-more" data-toggle="modal" data-target="#more-info-modal">' + artist.genre[i] + '</div>').appendTo('#artist-genre');
+    }
+    $('.more-genre-info').click(function(event){
+      displayMoreGenreInfo($(event.currentTarget).text());
+    });
   }
 
   function populateSelectedArtist(artist){
@@ -29,14 +33,13 @@ $(document).ready(function(){
     $('#selected-artist-image').attr("src", artist.thumbnail);
     $('#artist-birth').text("Birth: " + artist.birth);
     $('#artist-death').text("Death: " + artist.death);
-    $('#artist-genre').text("Genre: " + artist.genre.join(", "));
     $('#artist-location').text("Location: " + artist.location.join(", "));
     $('.composer-audio').remove();
     for(let i = 0; i < artist.works.length; i++){
-      console.log(artist.works[i].url);
       $('#composer-works').append('<iframe class="composer-audio" id="composer-audio' + i + '" src="' + artist.works[i].url + '"></iframe>');
     }
     createEraLinks(artist);
+    createGenreLinks(artist);
     updateAudioPlayer(artist);
   }
 
@@ -61,13 +64,27 @@ $(document).ready(function(){
     $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + artistId + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
 
       $('#more-info').text(data.query.pages[0].extract);
-      $("#more-popup").addClass('show');
+      $('#more-modal-label').text($('#selected-artist-name').text());
 
     });
   }
 
-  function closeMoreArtistInfo(){
-    $("#more-popup").removeClass('show');
+  function displayMoreEraInfo(linkText){
+    $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + eras[linkText].wikipage + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
+
+      $('#more-info').text(data.query.pages[0].extract);
+      $('#more-modal-label').text(linkText);
+    });
+  }
+
+  function displayMoreGenreInfo(linkText){
+    console.log("get genre info");
+    $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + musicalTerms[linkText].wikipage + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
+      console.log(data);
+      $('#more-info').text(data.query.pages[0].extract);
+      console.log($('#more-info').text());
+      $('#more-modal-label').text(linkText);
+    });
   }
 
   function ArtistWork(workTitle, workUrl){
@@ -85,14 +102,20 @@ $(document).ready(function(){
   function  ArtistTest(numberQuestions){
     this.numberQuestions = numberQuestions;
     this.currentQuestion = 0;
-    this.artistIndex = 0;
     this.artistQuestions = [];
+
     this.getNextArtist = function(){
-      return artists[this.artistIndex++];
+      let nextArtist;
+      do{
+        nextArtist = artists[Math.floor(Math.random() * artists.length)];
+      } while(this.artistQuestions.find(compareArtistByShortName.bind(this, nextArtist.shortName)) !== undefined);
+      return nextArtist;
     };
+
     this.getArtistWork = function(artist){
       return artist.works[0];
     };
+
     for(i = 0; i < numberQuestions; i++){
       let nextArtist = this.getNextArtist();
       let nextQuestion = new ArtistQuestion(nextArtist, this.getArtistWork(nextArtist));
@@ -120,17 +143,17 @@ $(document).ready(function(){
   }
 
   function showAnswerIsCorrect(){
-    $('#answer-correct').removeClass('hide-grade');
-    $('#answer-correct').addClass('show-grade');
-    $('#answer-wrong').removeClass('show-grade');
-    $('#answer-wrong').addClass('hide-grade');
+    $('#answer-correct').removeClass('hide');
+    $('#answer-correct').addClass('show-block');
+    $('#answer-wrong').removeClass('show-block');
+    $('#answer-wrong').addClass('hide');
   }
 
   function showAnswerIsIncorrect(){
-    $('#answer-correct').removeClass('show-grade');
-    $('#answer-correct').addClass('hide-grade');
-    $('#answer-wrong').removeClass('hide-grade');
-    $('#answer-wrong').addClass('show-grade');
+    $('#answer-correct').removeClass('show-block');
+    $('#answer-correct').addClass('hide');
+    $('#answer-wrong').removeClass('hide');
+    $('#answer-wrong').addClass('show-block');
   }
 
   function displayScore(){
@@ -174,19 +197,29 @@ $(document).ready(function(){
     $('#score-comment').text(scoreComment);
   }
 
+  function showNextQuestionButton(){
+    $('#next-question').removeClass('hide');
+    $('#next-question').addClass('show-inline');
+    $('#display-score').removeClass('show-inline');
+    $('#display-score').addClass('hide');
+  }
+
+  function showGetScoreButton(){
+    $('#next-question').removeClass('show-inline');
+    $('#next-question').addClass('hide');
+    $('#display-score').removeClass('hide');
+    $('#display-score').addClass('show-inline');
+  }
+
   function displayQuestion(){
-    console.log(artistTest);
     artistTest.currentQuestion++;
-    // if(artistTest.currentQuestion > artistTest.artistQuestions.length){
-    //   displayScore();
-    //   return;
-    // }
-    // else if(artistTest.currentQuestion === artistTest.artistQuestions.length){
-    //   $('#next-question').text('Get Score');
-    // }
-    // else{
-    //   $('#next-question').text('Next Question');
-    // }
+
+    if(artistTest.currentQuestion === artistTest.artistQuestions.length){
+      showGetScoreButton();
+    }
+    else{
+      showNextQuestionButton();
+    }
 
     console.log("question: " + artistTest.artistQuestions[artistTest.currentQuestion - 1].artist.fullName);
 
@@ -208,11 +241,12 @@ $(document).ready(function(){
         $('#answer-image' + wrong).attr("src", artists[wrong].thumbnail);
       }
     }
-    $('.select-artist').prop("checked", false);
+    $('#answer0').prop("checked", true);
   }
 
   function administerTest(){
     artistTest = new ArtistTest(3);
+    console.log(artistTest);
     displayQuestion();
   }
 
@@ -224,14 +258,12 @@ $(document).ready(function(){
     });
 
     $('#more-artist-info').click(displayMoreArtistInfo);
-    $('#close-more-info').click(closeMoreArtistInfo);
     $('#start-test').click(administerTest);
     $('#next-question').click(displayQuestion);
     $('#display-score').click(displayScore);
     $('#submit-answer').click(gradeAnswer);
     $('.select-artist').click(function(event){
       artistTest.artistQuestions[artistTest.currentQuestion - 1].studentAnswer = $(event.currentTarget).next().next().text();
-      console.log(artistTest);
     });
   }
 
