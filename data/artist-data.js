@@ -22,6 +22,16 @@ var artists = [
         url:"https://open.spotify.com/embed?uri=spotify:track:2q7X1bEnp4KlwyBe1uGPwI",
         previewUrl: "https://p.scdn.co/mp3-preview/a7bd8694bc864ec5eab7b6d3094384874d9ec0fb?cid=null"
       },
+   ],
+   otherWorks: [
+     {
+       title: "Ich elender Mensch, wer wird mich erlösen, BWV 48",
+       previewUrl: "https://p.scdn.co/mp3-preview/7012e1dfb79c42d62885a3d06bcad097a7c2d58a?cid=null",
+     },
+     {
+       title: "Es reisset euch ein schrecklich Ende, BWV 90",
+       previewUrl: "https://p.scdn.co/mp3-preview/eb8f745a153548b48152d703e6aa5bf865391a9b?cid=null",
+     }
    ]
   },
   {
@@ -43,9 +53,19 @@ var artists = [
         previewUrl: "https://p.scdn.co/mp3-preview/b0031dfb13726587187066368e3c7ca72a53cd35?cid=null"
       },
       {
-        title: "Sonata No. 14 \"Moonlight\" in C-Sharp Minor\", Op. 27 No. 2: I. Adagio sostenuto",
+        title: "Sonata No. 14, Op. 27 No. 2: I. Adagio sostenuto",
         url: "https://open.spotify.com/embed?uri=spotify:track:3DNRdudZ2SstnDCVKFdXxG",
         previewUrl: "https://p.scdn.co/mp3-preview/7c2b7bbe98f908c395f2c7517760707a20bac794?cid=null"
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2,",
+        previewUrl: "https://p.scdn.co/mp3-preview/b687e7b9ad5bfd8cf83c662f765c11ef313d05dd?cid=null",
+      },
+      {
+        title: "String Quartet No. 16, Op. 135: II. Vivace",
+        previewUrl: "https://p.scdn.co/mp3-preview/38bb36d119798fe3694a430a14fcada466cb0b7f?cid=null",
       }
     ]
   },
@@ -72,6 +92,16 @@ var artists = [
         url: 'https://open.spotify.com/embed?uri=spotify:track:02TadnJNMcVjr4baY39H1p',
         previewUrl: "https://p.scdn.co/mp3-preview/d663e7b7c2380c3b77179ef399bad12d04b80298?cid=null"
       }
+    ],
+    otherWorks: [
+      {
+        title: "Brahms Lullaby",
+        previewUrl: "https://p.scdn.co/mp3-preview/93189217f6b8c221a827efc742e54ddd5ef4fa60?cid=null",
+      },
+      {
+        title: "Piano Concerto No. 2 in B-Flat Major, Op. 83: I. Allegro non troppo",
+        previewUrl: "https://p.scdn.co/mp3-preview/88de60fc21e1763d4f74b301a31b95bea10b6d04?cid=null",
+      }
     ]
   },
   {
@@ -96,6 +126,51 @@ var artists = [
         title: "In Nomine à 5 (VdGS no. 4)",
         url: 'https://open.spotify.com/embed?uri=spotify:track:2Q2yNkzkHUrUyODYRejoFj',
         previewUrl: "https://p.scdn.co/mp3-preview/f77a05999ebe20bb358a217694cb93fafdeafb5a?cid=null"
+      }
+    ],
+    otherWorks: [
+      {
+        title: "In Nomine à 5 (VdGS no. 4)",
+        previewUrl: "https://p.scdn.co/mp3-preview/f77a05999ebe20bb358a217694cb93fafdeafb5a?cid=null",
+      },
+      {
+        title: "Mass a 4: Kyrie",
+        previewUrl: "https://p.scdn.co/mp3-preview/ba9a5be256906dacc8ef69b51e98974772b16b58?cid=null",
+      }
+    ]
+  },
+  {
+    type: 'Composer',
+    wikipage: 'Aaron_Copland',
+    shortName: 'Copland',
+    fullName: 'Aaron Copland',
+    thumbnail: './images/220px-Aaron_Copland_1970.JPG',
+    birth: '1900',
+    death: '1990',
+    era: ['20th Century'],
+    genre: ['20th-century Classical'],
+    location: [ 'United States'],
+    description: "Copland accomplished the feat of writing simple yet highly professionsl music. His textures are clear, his slow-moving harmonies--often almost motionless--seem to evoke the openness of the American landscape; and, though strongly tonal, his works embody twentieth-century techniques such as polychords, polyrhythms, changing meters, and percussive orchestrations.",
+    works: [
+      {
+        title: "Appalachian Spring Suite",
+        url:"https://open.spotify.com/embed?uri=spotify:track:6IQ1XK96ipPTqlEXCPYWwR",
+        previewUrl: "https://p.scdn.co/mp3-preview/bb65b00ae484ff49a4ab1cf9894d2af61d99058f?cid=null",
+      },
+      {
+        title: "Down a Country Lane (1962)",
+        url:"https://open.spotify.com/embed?uri=spotify:track:3y6sNXN2WcIjU88YMhvnR2",
+        previewUrl: "https://p.scdn.co/mp3-preview/7dd80505ba6e5f076ab11b2bdda84e1a54958175?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Appalachian Spring: Doppio movimento",
+        previewUrl: "https://p.scdn.co/mp3-preview/9b4cfa29963145d5b4450460a5005177b0b1f687?cid=null",
+      },
+      {
+        title: "4 Dance Episodes from Rodeo: Hoe-Down",
+        previewUrl: "https://p.scdn.co/mp3-preview/92dd6eeeb874709cfc58bf723a1222770f987e1e?cid=null",
       }
     ]
   },
@@ -122,6 +197,16 @@ var artists = [
         url: 'https://open.spotify.com/embed?uri=spotify:track:7nTwlmrw5dRthSvSTmCsKa',
         previewUrl: "https://p.scdn.co/mp3-preview/07063fc01ab3c0696c6685b88251e5285e39f6bf?cid=null"
       }
+    ],
+    otherWorks: [
+      {
+        title: "O gemma, lux et speculum - Sacer pastor Barensium (Franco-Flemish Polyphony)",
+        previewUrl: "https://p.scdn.co/mp3-preview/af5d40d33de064dbe6eeb1586721f6122fe74bd6?cid=null",
+      },
+      {
+        title: "Saltarello - Guillaume Dufay / Jordi Savall",
+        previewUrl: "https://p.scdn.co/mp3-preview/685572c9dfcbf871df0ca375b0e3bb1161a29b8f?cid=null",
+      }
     ]
   },
   {
@@ -146,6 +231,16 @@ var artists = [
         title: "Metamorphosis 1",
         url: 'https://open.spotify.com/embed?uri=spotify:track:4iDCHDK1PPIvs3IZsTcWgY',
         previewUrl: "https://p.scdn.co/mp3-preview/fb44e3cf0f76cbb2c747b11ff3842900ced65939?cid=null"
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Etude No. 2",
+        previewUrl: "https://p.scdn.co/mp3-preview/f904bdf8888bb6983e4c0d0ad63f44edda03dd36?cid=null",
+      },
+      {
+        title: "Morning Passages",
+        previewUrl: "https://p.scdn.co/mp3-preview/b2dfebbaffe2381c99dfd99f0d2ecd3829da610f?cid=null",
       }
     ]
   },
@@ -172,6 +267,16 @@ var artists = [
         url:"https://open.spotify.com/embed?uri=spotify:track:6oSorVwBDQmckYOIMTTVxi",
         previewUrl: "https://p.scdn.co/mp3-preview/3469fb94a4bdac274f86ff65c09b02a9e5a00d20?cid=null",
       }
+    ],
+    otherWorks: [
+      {
+        title: "Concerto grosso Op. 3 No. 6 in D major / D minor: I",
+        previewUrl: "https://p.scdn.co/mp3-preview/e31f6c273ce8d6028dfe17095183a0e66ab763bc?cid=null",
+      },
+      {
+        title: "Concerto Grosso, Op. 6, No. 05 in D Major (HWV 323): Menuet",
+        previewUrl: "https://p.scdn.co/mp3-preview/445a7d3df1a65bf39fcc589070d7dc2cb63af195?cid=null",
+      }
     ]
   },
   {
@@ -197,6 +302,16 @@ var artists = [
         url:"https://open.spotify.com/embed?uri=spotify:track:3y9uQIatvsOg3tI8mPK8u4",
         previewUrl: "https://p.scdn.co/mp3-preview/ae6f37b89a46c18ee6f83b134cb3f4fa0f544f29?cid=null",
       }
+    ],
+    otherWorks: [
+      {
+        title: "Concerto for Cello and Orchestra in C Major, Hob.VIIb:1: II. Adagio",
+        previewUrl: "https://p.scdn.co/mp3-preview/8d659991fc5cd0bde04bc61b78576b29aabbcf21?cid=null",
+      },
+      {
+        title: "Symphony No. 99 in E-Flat Major, Hob.I:99: II. Adagio",
+        previewUrl: "https://p.scdn.co/mp3-preview/f74657b3d16286f1f53f4ef7dbfcde2a80e88da5?cid=null",
+      }
     ]
   },
   {
@@ -221,6 +336,16 @@ var artists = [
         title: "Grandes études de Paganini, S141: No.3 In G Sharp Minor - \'La Campanella\'",
         url:"https://open.spotify.com/embed?uri=spotify:track:7x7WWeEqIKIPPRCmcYexeV",
         previewUrl: "https://p.scdn.co/mp3-preview/9fd81bea69de3cf47a675c19af614ffa72f33b91?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "En rêve, nocturne, S. 207",
+        previewUrl: "https://p.scdn.co/mp3-preview/deac322a5b298f805be14972ecc546e6e5fd5f09?cid=null",
+      },
+      {
+        title: "Les Jeux d'eaux a la Villa d'Este, S. 163",
+        previewUrl: "https://p.scdn.co/mp3-preview/5e84ff6dcee43fda0458cabf4f4c695c2d0c1270?cid=null",
       }
     ]
   },
@@ -350,84 +475,159 @@ var artists = [
         previewUrl: "https://p.scdn.co/mp3-preview/cfd58a2404304d581372f3162913e0d39c5af970?cid=null",
       },
       {
-        title: "Song of Songs: No. 16 Surge, amica mea, speciosa mea",
-        url:"https://open.spotify.com/embed?uri=spotify:track:6taQyTJtq3TW6HTcYPidG0",
-        previewUrl: "https://p.scdn.co/mp3-preview/5a324f35b50ff8f8665138b8444fa3d9b41e16a0?cid=null",
+        title: "Violin Concerto In D Minor, Op.47: 1. Allegro moderato",
+        url:"https://open.spotify.com/embed?uri=spotify:track:7fAFoIehXy4Aou20Z63k8y",
+        previewUrl: "https://p.scdn.co/mp3-preview/575adc817ee54e1a2fe1dad867e09bcf9bc977e5?cid=null",
       }
     ],
     otherWorks: [
       {
-        title: "Missa Papae Marcelli: Kyrie",
-        previewUrl: "https://p.scdn.co/mp3-preview/63185d154a17a722c53d19f0bf4563ac5806cd02?cid=null",
+        title: "Pierrot Lunaire, Op.21 (1912) / Part 2: 8. Die Nacht",
+        previewUrl: "https://p.scdn.co/mp3-preview/3d8692cb7e8c5ce98ed10924fc0f04cf89f94e1e?cid=null",
       },
       {
-        title: "Offertoria totius anni: Terra tremuit",
-        previewUrl: "https://p.scdn.co/mp3-preview/20a4ef3897d83d5b2d848ac76e8ebdfe92f59812?cid=null",
+        title: "Klavierstück, Op. 33a: Mäßig",
+        previewUrl: "https://p.scdn.co/mp3-preview/c24fc1d7cf7f6bec048e33b1488ce6f1b6a4a05f?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Ludwig_van_Beethoven',
-    shortName: 'Beethoven',
-    thumbnail: './images/Beethoven.jpg',
+    wikipage: 'Franz_Schubert',
+    shortName: 'Schubert',
+    fullName: 'Franz_Schubert',
+    thumbnail: './images/220px-Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg',
+    birth: '1797',
+    death: '1828',
+    era: ['Classical', 'Romantic'],
+    genre: ['Art Song', 'Symphony'],
+    location: [ 'Austria'],
+    description: "[Schubert's] songs embrace an enormous variety of moods and types; their melodies range from simple, folklike tunes to complex lines that suggest impassioned speech, and their piano accompaniments are equally rich and evocative. Schubert's imaginative harmonies and dissonances provide some of the most poetic moments in music.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Piano Sonata in B Flat Major, D. 960: I. Molto moderato",
+        url:"https://open.spotify.com/embed?uri=spotify:track:1QE4KBHZb0Y4ERG18VEm3y",
+        previewUrl: "https://p.scdn.co/mp3-preview/d93c4c2aa3784aa35018971ab24a7feac1546db1?cid=null",
+      },
+      {
+        title: "6 Moments musicaux, Op. 94, D. 780: No. 2, Andantino in A-Flat Major",
+        url:"https://open.spotify.com/embed?uri=spotify:track:3eItWfiip4JNKf2I8MsUjB",
+        previewUrl: "https://p.scdn.co/mp3-preview/b6757f082623cdebc1529e281f1b025a0c87c22c?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "6 Moments musicaux, Op. 94, D. 780: No. 5, Allegro vivace in F Minor",
+        previewUrl: "https://p.scdn.co/mp3-preview/5653556bf103d4d5ee5a1149b983993f4cbfdc2d?cid=null",
+      },
+      {
+        title: "4 Impromptus, Op. 90, D. 899: No. 1, Allegro molto moderato in C Minor",
+        previewUrl: "https://p.scdn.co/mp3-preview/dcbec2d6c9082226a395bdc0018f431e3fa21268?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Leonard_Bernstein',
-    shortName: 'Bernstein',
-    thumbnail: './images/Leonard_Bernstein_by_Jack_Mitchell.jpg',
+    wikipage: 'Pyotr_Ilyich_Tchaikovsky',
+    shortName: 'Tchaikovsky',
+    fullName: 'Pyotr Ilyich Tchaikovsky',
+    thumbnail: './images/300px-Porträt_des_Komponisten_Pjotr_I._Tschaikowski_(1840-1893).jpg',
+    birth: '1840',
+    death: '1893',
+    era: ['Romantic'],
+    genre: ['Piano Concerto', 'Symphony'],
+    location: [ 'Russia'],
+    description: "...his style was influenced by French, Italian, and German music as well as Russian folksong. His works are much more in the western tradition than those of his contemporaries...He fuse national and international elements to produce intensely subjective and passionate music.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Tchaikovsky: Swan Lake, Op. 20, Act II: No. 10, Scene (Moderato)",
+        url:"https://open.spotify.com/embed?uri=spotify:track:2jjVsWQEUeZ06qSqF8xiBr",
+        previewUrl: "https://p.scdn.co/mp3-preview/dcbbd3d40daf9e2c5ff8c417b7976c6b5aaa8af1?cid=null",
+      },
+      {
+        title: "The Nutcracker - Ballet, Op.71, Act II: No. 13 - Waltz of the Flowers",
+        url:"https://open.spotify.com/embed?uri=spotify:track:0CJuLeZpCdqrqoCMXWZw8k",
+        previewUrl: "https://p.scdn.co/mp3-preview/227476c3575eced851eda8103d987032c2b0b29c?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Swan Lake, Ballet suite, op. 20a: I. Scene ",
+        previewUrl: "https://p.scdn.co/mp3-preview/e0b3b4aaba83e69024a24d3a9ca4a6683328a149?cid=null",
+      },
+      {
+        title: "The Nutcracker - Ballet, Op.71, Act II: Variation II: Dance of the Sugar-Plum Fairy",
+        previewUrl: "https://p.scdn.co/mp3-preview/d4aa6c8cd2eedef4643bc74ee5dad9bde8e42c99?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Frédéric_Chopin',
-    shortName: 'Chopin',
-    thumbnail: './images/Frederic_Chopin_photo.jpeg',
+    wikipage: 'Giuseppe_Verdi',
+    shortName: 'Verdi',
+    fullName: 'Giuseppe_Verdi',
+    thumbnail: './images/220px-Verdi-photo-Brogi.jpg',
+    birth: '1813',
+    death: '1901',
+    era: ['Romantic'],
+    genre: ['Opera'],
+    location: [ 'Italy'],
+    description: "Verdi composed...for a mass public whose main entertainment was opera.  He wanted subjects that were 'original, interesting,...and passionate; passions above all!' Almost all of his mature works are serious and end unhappily; they move quickly and involve extremes of hatred, love, jealousy, and fear, and his powerful music underlines the dramatic situations.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Requiem: II. Dies irae",
+        url:"https://open.spotify.com/embed?uri=spotify:track:18mjTyCpqUWuF1HedQZW4s",
+        previewUrl: "https://p.scdn.co/mp3-preview/0c02d78f606073214245510c3b01662ea5a2c3c5?cid=null",
+      },
+      {
+        title: "La Traviata / Act 1: 'Libiamo ne'lieti calici'",
+        url:"https://open.spotify.com/embed?uri=spotify:track:41ujv4mhxlqR8nlnieDpDp",
+        previewUrl: "https://p.scdn.co/mp3-preview/a1a8234220953544f3525cc7d8cee58a6ad39c9a?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "I vespri siciliani : Le quattro stagioni: 2. La primavera",
+        previewUrl: "https://p.scdn.co/mp3-preview/254a354f7cccae2e9b65256f4ebf98bcee4f33e4?cid=null",
+      },
+      {
+        title: "Rigoletto, Atto III, Canzone",
+        previewUrl: "https://p.scdn.co/mp3-preview/2de2164202e0e00f8477d82cb362aaa732807f81?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Wolfgang_Amadeus_Mozart',
-    shortName: 'Mozart',
-    thumbnail: './images/Croce-Mozart-Detail.jpg',
+    wikipage: 'Richard_Wagner',
+    shortName: 'Wagner',
+    fullName: 'Richard Wagner',
+    thumbnail: './images/RichardWagner.jpg',
+    birth: '1813',
+    death: '1883',
+    era: ['Romantic'],
+    genre: ['Opera'],
+    location: [ 'Germany'],
+    description: "Wagner revolutionized opera by shifting the focus from voice to orchestra...His expanded and colorful orchestration expresses the drama and constantly develops, transforms and intertwines musical ideas...The tension of Wagner's music is heightened by chromatic and dissonant harmonies...",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Die Walkure, Act III: Ride of the Valkyries",
+        url:"https://open.spotify.com/embed?uri=spotify:track:2e8MxBgVWMSQmxb2zcuCoq",
+        previewUrl: "https://p.scdn.co/mp3-preview/d8507931996eff6742de6006b345d586de0a9272?cid=null",
+      },
+      {
+        title: "Solemn March To The Holy Grail From Parsifal, S. 450",
+        url:"https://open.spotify.com/embed?uri=spotify:track:7wZA1o507WTzK22kNsMYws",
+        previewUrl: "https://p.scdn.co/mp3-preview/aab06545a2b69e8160445787d551a5d2c94c481a?cid=null",
       }
-    ]
-  },
-  {
-    type: 'Composer',
-    wikipage: 'Antonio_Vivaldi',
-    shortName: 'Vivaldi',
-    thumbnail: './images/Vivaldi.jpg',
-    works: [
+    ],
+    otherWorks: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Lohengrin, WWV 75, Act III: Act III Scene 1: Prelude",
+        previewUrl: "https://p.scdn.co/mp3-preview/f8a117fce63b556efb2bada8276dcd4becf916f5?cid=null",
+      },
+      {
+        title: "Der fliegende Hollander: Ouverture",
+        previewUrl: "https://p.scdn.co/mp3-preview/2c4ab66b6629335811cb08ddd069c00e6fe4302e?cid=null",
       }
     ]
   }

@@ -20,6 +20,9 @@ var eras = {
 };
 
 var musicalTerms = {
+  'Art Song':{
+    wikipage: 'Art_song'
+  },
   Atonality:{
     wikipage: 'Atonality'
   },
@@ -67,5 +70,9 @@ var musicalTerms = {
   },
   'Twelve-tone Technique': {
     wikipage: 'Twelve-tone_technique'
+  },
+  '20th-century Classical': {
+    wikipage: '20th-century_classical_music'
   }
+
 };
