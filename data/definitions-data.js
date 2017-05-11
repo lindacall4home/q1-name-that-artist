@@ -20,11 +20,17 @@ var eras = {
 };
 
 var musicalTerms = {
+  Atonality:{
+    wikipage: 'Atonality'
+  },
   Concerto:{
     wikipage: 'Concerto'
   },
   Fugue:{
     wikipage: 'Fugue'
+  },
+  Madrigal:{
+    wikipage: 'Madrigal'
   },
   Mass:{
     wikipage: 'Mass_(music)'
@@ -58,5 +64,8 @@ var musicalTerms = {
   },
   Symphony: {
     wikipage: 'Symphony'
+  },
+  'Twelve-tone Technique': {
+    wikipage: 'Twelve-tone_technique'
   }
 };

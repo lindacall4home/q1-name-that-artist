@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   function renderArtists(){
     for(let i = 0; i < artists.length; i++){
-      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img class="artist-image" src="' + artists[i].thumbnail + '" alt="' + artists[i].shortName + '><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
+      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img class="artist-image" src="' + artists[i].thumbnail + '"  alt="' + artists[i].shortName + '"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
     }
   }
 
@@ -28,6 +28,7 @@ $(document).ready(function(){
   }
 
   function populateSelectedArtist(artist){
+    console.log("populating artist " + artist.fullName);
     $('#artist-id').text(artist.wikipage);
     $('#selected-artist-name').text(artist.fullName);
     $('#selected-artist-image').attr("src", artist.thumbnail);
@@ -255,6 +256,7 @@ $(document).ready(function(){
   function addEventListeners(){
 
     $('#artists').on('click', '.caption', function(event){
+      console.log("click on " + $(event.currentTarget).text());
       let artist = artists.find(compareArtistByShortName($(event.currentTarget).text()));
       populateSelectedArtist(artist);
     });

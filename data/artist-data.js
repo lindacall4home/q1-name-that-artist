@@ -218,7 +218,7 @@ var artists = [
         previewUrl: "https://p.scdn.co/mp3-preview/baef634095fc64d982e5e9901a833a597b667e83?cid=null",
       },
       {
-        title: "Grandes études de Paganini, S141: No.3 In G Sharp Minor - \"La Campanella\"",
+        title: "Grandes études de Paganini, S141: No.3 In G Sharp Minor - \'La Campanella\'",
         url:"https://open.spotify.com/embed?uri=spotify:track:7x7WWeEqIKIPPRCmcYexeV",
         previewUrl: "https://p.scdn.co/mp3-preview/9fd81bea69de3cf47a675c19af614ffa72f33b91?cid=null",
       }
@@ -226,53 +226,143 @@ var artists = [
   },
   {
     type: 'Composer',
-    wikipage: 'Frédéric_Chopin',
-    shortName: 'Chopin',
-    thumbnail: './images/Frederic_Chopin_photo.jpeg',
+    wikipage: 'Claudio_Monteverdi',
+    shortName: 'Monteverdi',
+    fullName: 'Claudio Monteverdi',
+    thumbnail: './images/Bernardo_Strozzi_-_Claudio_Monteverdi_(c.1630).jpg',
+    birth: '1567',
+    death: '1643',
+    era: ['Renaissance', 'Baroque'],
+    genre: ['Madrigal', 'Opera'],
+    location: [ 'Italy'],
+    description: "Monteverdi wanted to create music of emotional intensity...he used dissonances with unpresidented freedom and daring. And to evoke the warlike feelings in some of his texts, he introduced new orchestral effects, including pizzacato and tremolo.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Psalmus 109. dixit dominus",
+        url:"https://open.spotify.com/embed?uri=spotify:track:1XuE3xSCh6D7Ut6CbAdBDA",
+        previewUrl: "https://p.scdn.co/mp3-preview/9f005b3c72153ceaf195cadb55394f0b279e78fa?cid=null",
+      },
+      {
+        title: "Madrigals, Book 1: Baci soavi e cari, SV 27",
+        url:"https://open.spotify.com/embed?uri=spotify:track:53SB0ZoPnJzCd9e32A9zjl",
+        previewUrl: "https://p.scdn.co/mp3-preview/9fd81bea69de3cf47a675c19af614ffa72f33b91?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Madrigals, Book 1: Filli cara et amata, SV 29",
+        previewUrl: "https://p.scdn.co/mp3-preview/c3668c37b79d1439546bcdba4ab0d7d55b5b0119?cid=null",
+      },
+      {
+        title: "Ciaccona (Antonio Falconiero ca. 1585-1656)",
+        previewUrl: "https://p.scdn.co/mp3-preview/e15f4658a9e0a3ca287a7940284c92803f36a729?cid=null",
       }
     ]
   },
+
   {
     type: 'Composer',
     wikipage: 'Wolfgang_Amadeus_Mozart',
     shortName: 'Mozart',
+    fullName: 'Wolfgang Amadeus Mozart',
     thumbnail: './images/Croce-Mozart-Detail.jpg',
+    birth: '1756',
+    death: '1791',
+    era: ['Classical'],
+    genre: ['Concerto', 'Opera', 'Symphony'],
+    location: [ 'Austria'],
+    description: "His music sings and conveys ease, grace, and spontineity as well as balance, restraint, and proportion. Yet mysterious harmonies contrast with its lyricism, and it fuses elegance with power. His compositions sound effortless and were created with miraculous rapidity;",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Mozart : Requiem in D minor K626 : III Dies irae",
+        url:"https://open.spotify.com/embed?uri=spotify:track:1tWIFmd6N3cc5nzdwIV8s5",
+        previewUrl: "https://p.scdn.co/mp3-preview/41a4b04a95b350de41b1beeab84177cea8a767db?cid=null",
+      },
+      {
+        title: "Così fan tutte, K. 588",
+        url:"https://open.spotify.com/embed?uri=spotify:track:7uXWebiCNTRNG6AJFmbOxB",
+        previewUrl: "https://p.scdn.co/mp3-preview/85d59fe40020d95784510468849a4c54b671ad41?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Don Giovanni, ossia Il dissoluto punito, K.527 : Overture",
+        previewUrl: "https://p.scdn.co/mp3-preview/2dfab950fb8904840e6bb5ee1301407ada932011?cid=null",
+      },
+      {
+        title: "La Betulia liberata, K.74c / K.118: Parto inerme e non pavento",
+        previewUrl: "https://p.scdn.co/mp3-preview/7a9ef3abb6c1a5c023c2681570d1a9137bb0e748?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Antonio_Vivaldi',
-    shortName: 'Vivaldi',
-    thumbnail: './images/Vivaldi.jpg',
+    wikipage: 'Giovanni_Pierluigi_da_Palestrina',
+    shortName: 'Palestrina',
+    fullName: 'Giovanni Pierluigi da Palestrina',
+    thumbnail: './images/200px-Giovanni_Pierluigi_da_Palestrina.jpg',
+    birth: '1525',
+    death: '1594',
+    era: ['Renaissance'],
+    genre: ['Mass'],
+    location: [ 'Italy'],
+    description: "The council [Council of Trent] finally decreed that church music should be composed not 'to give empty pleasure to the ear' but to inspire religious contemplation. The restraint and serenity of Palestrina's works reflect this emphasis on more spiritual music.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Missa Papae Marcelli: Kyrie",
+        url:"https://open.spotify.com/embed?uri=spotify:track:7C5egNfLY7qELLhPnQIFtP",
+        previewUrl: "https://p.scdn.co/mp3-preview/c2771438f399370dc59707880aec1ec0953affd2?cid=null",
+      },
+      {
+        title: "Song of Songs: No. 16 Surge, amica mea, speciosa mea",
+        url:"https://open.spotify.com/embed?uri=spotify:track:6taQyTJtq3TW6HTcYPidG0",
+        previewUrl: "https://p.scdn.co/mp3-preview/5a324f35b50ff8f8665138b8444fa3d9b41e16a0?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Missa Papae Marcelli: Kyrie",
+        previewUrl: "https://p.scdn.co/mp3-preview/63185d154a17a722c53d19f0bf4563ac5806cd02?cid=null",
+      },
+      {
+        title: "Offertoria totius anni: Terra tremuit",
+        previewUrl: "https://p.scdn.co/mp3-preview/20a4ef3897d83d5b2d848ac76e8ebdfe92f59812?cid=null",
       }
     ]
   },
+
   {
     type: 'Composer',
-    wikipage: 'Johann_Sebastian_Bach',
-    shortName: 'Bach',
-    thumbnail: './images/260px-Johann_Sebastian_Bach.jpg',
+    wikipage: 'Arnold_Schoenberg',
+    shortName: 'Schoenberg',
+    fullName: 'Arnold Schoenberg',
+    thumbnail: './images/220px-Arnold_Schoenberg_la_1948.jpg',
+    birth: '1874',
+    death: '1951',
+    era: ['20th Century'],
+    genre: ['Atonality', 'Twelve-tone Technique'],
+    location: [ 'Austria'],
+    description: "...in his atonal works, all twelve tones are used without regard for their traditional relationship to major and mino scales. The twelve-tone system...is a systemized form of atonality which gives equal importance to each of the twelve chromatic tones.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Concerto For Piano And Orchestra, Op.42: Andante",
+        url:"https://open.spotify.com/embed?uri=spotify:track:1KIl0NMnjwfwGZzMzT4Cyp",
+        previewUrl: "https://p.scdn.co/mp3-preview/cfd58a2404304d581372f3162913e0d39c5af970?cid=null",
+      },
+      {
+        title: "Song of Songs: No. 16 Surge, amica mea, speciosa mea",
+        url:"https://open.spotify.com/embed?uri=spotify:track:6taQyTJtq3TW6HTcYPidG0",
+        previewUrl: "https://p.scdn.co/mp3-preview/5a324f35b50ff8f8665138b8444fa3d9b41e16a0?cid=null",
+      }
+    ],
+    otherWorks: [
+      {
+        title: "Missa Papae Marcelli: Kyrie",
+        previewUrl: "https://p.scdn.co/mp3-preview/63185d154a17a722c53d19f0bf4563ac5806cd02?cid=null",
+      },
+      {
+        title: "Offertoria totius anni: Terra tremuit",
+        previewUrl: "https://p.scdn.co/mp3-preview/20a4ef3897d83d5b2d848ac76e8ebdfe92f59812?cid=null",
       }
     ]
   },
