@@ -20,13 +20,40 @@ var eras = {
 };
 
 var musicalTerms = {
-  Polyphony: {
-    wikipage: 'Polyphony',
-  },
   Concerto:{
-    wikipage: 'Concerto',
+    wikipage: 'Concerto'
   },
   Fugue:{
-    wikipage: 'Fugue',
+    wikipage: 'Fugue'
+  },
+  Mass:{
+    wikipage: 'Mass_(music)'
+  },
+  Minimalism:{
+    wikipage: 'Minimal_music'
+  },
+  Motet:{
+    wikipage: 'Motet'
+  },
+  Oratorio:{
+    wikipage: 'Oratorio'
+  },
+  Orchestra:{
+    wikipage: 'Orchestra'
+  },
+  Opera:{
+    wikipage: 'Opera'
+  },
+  'Piano Sonata':{
+    wikipage: 'Piano_sonata'
+  },
+  Polyphony:{
+    wikipage: 'Polyphony'
+  },
+  'String Quartet': {
+    wikipage: 'String_quartet'
+  },
+  Symphony: {
+    wikipage: 'Symphony'
   }
 };
