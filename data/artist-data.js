@@ -160,16 +160,12 @@ var artists = [
     era: ['Baroque'],
     genre: ['Opera', 'Oratorio', 'Concerto' ],
     location: ['Germany', 'England'],
+    description: "",
     works: [
       {
         title: "Messiah, Part Two: Hallelujah",
         url:"https://open.spotify.com/embed?uri=spotify:track:179VNrG3VdWEJNOuV0MJVv",
         previewUrl:  "https://p.scdn.co/mp3-preview/601294d1cc6391448e7025e362514b01ec6dde4e?cid=null",
-      },
-      {
-        title: "Messiah, HWV 56, Pt. 2: Part II: Hallelujah (Chorus)",
-        url:"https://open.spotify.com/embed?uri=spotify:track:2q7X1bEnp4KlwyBe1uGPwI",
-        previewUrl: "https://p.scdn.co/mp3-preview/a7bd8694bc864ec5eab7b6d3094384874d9ec0fb?cid=null"
       },
       {
         title: "Solomon: Act III - No.42 Symphony: arrival of the Queen of Sheba",

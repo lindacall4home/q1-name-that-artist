@@ -10,7 +10,6 @@ $(document).ready(function(){
   function createEraLinks(artist){
     $('.more-era-info').remove();
     for (let i = 0; i < artist.era.length; i++){
-      console.log(artist.era[i]);
       $('<div class="click-text more-era-info" id="' + eras[artist.era[i]].wikipage + '-more" data-toggle="modal" data-target="#more-info-modal">' + artist.era[i] + '</div>').appendTo('#artist-era');
     }
     $('.more-era-info').click(function(event){
@@ -42,22 +41,6 @@ $(document).ready(function(){
     }
     createEraLinks(artist);
     createGenreLinks(artist);
-    updateAudioPlayer(artist);
-  }
-
-  function updateAudioPlayer(artist){
-    $('#selected-work-title').text(artist.works[0].title);
-    let $audioSource = $('#selected-work-audio');
-    $audioSource.attr("src", "./audio/" + artist.works[0].file);
-    $audioSource.load();
-  }
-
-  function compareArtistByImage(imageSrc, artist){
-    return artist.thumbnail === imageSrc;
-  }
-
-  function compareArtistByShortName(shortName, artist){
-    return artist.shortName === shortName;
   }
 
   function displayMoreArtistInfo(){
@@ -80,18 +63,10 @@ $(document).ready(function(){
   }
 
   function displayMoreGenreInfo(linkText){
-    console.log("get genre info");
     $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + musicalTerms[linkText].wikipage + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
-      console.log(data);
       $('#more-info').text(data.query.pages[0].extract);
-      console.log($('#more-info').text());
       $('#more-modal-label').text(linkText);
     });
-  }
-
-  function ArtistWork(workTitle, workUrl){
-    this.workTitle = workTitle;
-    this.workUrl = workUrl;
   }
 
   function ArtistQuestion(artist, artistWork){
@@ -110,7 +85,7 @@ $(document).ready(function(){
       let nextArtist;
       do{
         nextArtist = artists[Math.floor(Math.random() * 6)];
-      } while(this.artistQuestions.find(compareArtistByShortName.bind(this, nextArtist.shortName)) !== undefined);
+      } while(this.artistQuestions.find(compareArtistByShortName(nextArtist.shortName)) !== undefined);
       return nextArtist;
     };
 
@@ -130,6 +105,8 @@ $(document).ready(function(){
 
     $("#answer-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
 
+    console.log("student Answer = " + artistQuestion.studentAnswer);
+    console.log("correct Answer = " + artistQuestion.artist.fullName);
     if(artistQuestion.studentAnswer === artistQuestion.artist.fullName){
       artistQuestion.answerCorrect = true;
       showAnswerIsCorrect();
@@ -140,7 +117,7 @@ $(document).ready(function(){
     }
 
     $('#correct-answer-image').attr("src", artistQuestion.artist.thumbnail);
-    $('#correct-answer-title').text(artistQuestion.artist.fullName + ":  " + artistQuestion.artistWork.workTitle);
+    $('#correct-answer-title').text(artistQuestion.artist.fullName + ":  '" + artistQuestion.artistWork.title + "'");
 
   }
 
@@ -176,26 +153,26 @@ $(document).ready(function(){
 
     if(percentCorrect >= 90){
       scoreText = scoreText + '!';
-      scoreGrade = 'Awesome!';
+      scoreGrade = '<span  class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>Awesome!<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
       scoreComment = 'You are a master at identifying composers!';
     }
-    else if(percentCorrect >= 80){
+    else if(percentCorrect >= 70){
       scoreText = scoreText + '!';
-      scoreGrade = 'Great job!';
+      scoreGrade = '<span>Great job!</span>';
       scoreComment = 'You have learned a lot about classical composers!';
     }
-    else if(percentCorrect >= 70){
+    else if(percentCorrect >= 60){
       scoreText = scoreText + '.';
-      scoreGrade = 'Nice work.';
+      scoreGrade = '<span>Nice work.</span>';
       scoreComment = 'Keep studying to improve your score!';
     }
     else {
       scoreText = scoreText + '.';
-      scoreGrade = 'What Happened!';
+      scoreGrade = '<span>What Happened?!</span>';
       scoreComment = 'You should study more!';
     }
     $('#final-score').text(scoreText);
-    $('#score-grade').text(scoreGrade);
+    $('#score-grade').html(scoreGrade);
     $('#score-comment').text(scoreComment);
   }
 
@@ -223,31 +200,37 @@ $(document).ready(function(){
       showNextQuestionButton();
     }
 
-    console.log("question: " + artistTest.artistQuestions[artistTest.currentQuestion - 1].artist.fullName);
+    console.log("correct answer for question : " + artistTest.currentQuestion  + " = " + artistTest.artistQuestions[artistTest.currentQuestion - 1].artist.fullName);
 
     var artistQuestion = artistTest.artistQuestions[artistTest.currentQuestion - 1];
 
     $("#question-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
     $("#question-audio-source").attr("src", artistQuestion.artistWork.previewUrl);
     $("#question-audio-source").parent().load();
+
     let correct = Math.floor(Math.random() * 4);
     $('label[for=answer' + correct + ']').text(artistQuestion.artist.fullName);
     $('#answer-image' + correct).attr("src", artistQuestion.artist.thumbnail);
-    let answerArr = [];
-    answerArr.push(artistQuestion.artist);
+
+    let answerArr = [{}, {}, {}, {}];
+    answerArr[correct] = artistQuestion.artist;
 
     for (let i = 0; i < 4; i++){
       if(i !== correct){
         do{
           wrong = Math.floor(Math.random() * 6);
-          console.log("i: " + i + " artist: " + wrong);
-        }while(answerArr.find(compareArtistByShortName.bind(this, artists[wrong].shortName !== undefined)));
-        answerArr.push(artists[wrong]);
-        console.log(answerArr);
+        }while(answerArr.find(compareArtistByShortName(artists[wrong].shortName)) !== undefined);
+
+        answerArr[i] = artists[wrong];
         $('label[for=answer' + i + ']').text(artists[wrong].fullName);
         $('#answer-image' + wrong).attr("src", artists[wrong].thumbnail);
       }
     }
+    artistQuestion.studentAnswer = answerArr[0].fullName;
+    console.log("answer 0 = " + answerArr[0].shortName);
+    console.log("answer 1 = " + answerArr[1].shortName);
+    console.log("answer 2 = " + answerArr[2].shortName);
+    console.log("answer 3 = " + answerArr[3].shortName);
     $('#answer0').prop("checked", true);
   }
 
@@ -257,10 +240,22 @@ $(document).ready(function(){
     displayQuestion();
   }
 
+  function compareArtistByImage(imageSrc){
+    return function(element){
+      return element.thumbnail === shortName;
+    };
+  }
+
+  function compareArtistByShortName(shortName){
+    return function(element){
+      return element.shortName === shortName;
+    };
+  }
+
   function addEventListeners(){
 
     $('#artists').on('click', '.caption', function(event){
-      let artist = artists.find(compareArtistByShortName.bind(this, $(event.currentTarget).text()));
+      let artist = artists.find(compareArtistByShortName($(event.currentTarget).text()));
       populateSelectedArtist(artist);
     });
 
