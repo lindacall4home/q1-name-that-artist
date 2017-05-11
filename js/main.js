@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   function renderArtists(){
     for(let i = 0; i < artists.length; i++){
-      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img src="' + artists[i].thumbnail + '" alt="' + artists[i].shortName + ' " style="width:160px; height:160px"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
+      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img class="artist-image" src="' + artists[i].thumbnail + '" alt="' + artists[i].shortName + '><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
     }
   }
 

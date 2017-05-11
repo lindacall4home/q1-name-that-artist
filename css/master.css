@@ -1,7 +1,7 @@
 #selected-artist-image{
-   width:200px;
-   height:200px;
-   padding-bottom:10px"
+   width: 200px;
+   height: 200px;
+   margin-bottom: 20px;
 }
 
 .artist-fact{
@@ -15,10 +15,14 @@
 }
 
 .composer-audio{
-  width: 225px;
+  width: 400px;
   height: 80px;
   frameborder: 0;
   allowtransparency: true;
+}
+.artist-image{
+  width: 160px !important;
+  height: 160px !important;
 }
 
 .hidden-info{

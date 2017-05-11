@@ -159,8 +159,8 @@ var artists = [
     death: '1759',
     era: ['Baroque'],
     genre: ['Opera', 'Oratorio', 'Concerto' ],
-    location: ['Germany', 'England'],
-    description: "",
+    location: [ 'England', 'Germany', 'Italy'],
+    description: "...the core of his huge output consists of English oratorios and Italian operas. His oratorios are usually based on stories from the Old Testament...Most have plots and charaters...The chorus is the focus of a Handelian oratorio and is combined flexibly and imaginatively with the orchestra...He liked to combine two diferent melodic ideas polyphonically, and he achieved sharp changes of mood by shifting between minor and major keys.",
     works: [
       {
         title: "Messiah, Part Two: Hallelujah",
@@ -176,27 +176,51 @@ var artists = [
   },
   {
     type: 'Composer',
-    wikipage: 'Ludwig_van_Beethoven',
+    wikipage: 'Joseph_Haydn',
     shortName: 'Haydn',
-    thumbnail: './images/Beethoven.jpg',
+    fullName: 'Joseph Haydn',
+    thumbnail: './images/Joseph_Haydn.jpg',
+    birth: '1732',
+    death: '1809',
+    era: ['Classical'],
+    genre: ['String Quartet', 'Symphony'],
+    location: [ 'Austria'],
+    description: "His music, like his personality, is robust and direct; it radiates healthy optimism. Much of it has a folk flavor...Haydn was a master at developing themes...creating contrasts of mood through changes in texture, rhythm, dynamics, and orchestration.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Symphony No. 93 in D Major, Hob I:93: II. Largo cantabile",
+        url:"https://open.spotify.com/embed?uri=spotify:track:0kLQvtf6Oo11Xqmj9HzAim",
+        previewUrl: "https://p.scdn.co/mp3-preview/d76d3498e0e4a1ca768079721de5ebf5a9712cc5?cid=null",
+      },
+      {
+        title: "String Quartet in D Major, Op. 64/5: Adagio cantabile",
+        url:"https://open.spotify.com/embed?uri=spotify:track:3y9uQIatvsOg3tI8mPK8u4",
+        previewUrl: "https://p.scdn.co/mp3-preview/ae6f37b89a46c18ee6f83b134cb3f4fa0f544f29?cid=null",
       }
     ]
   },
   {
     type: 'Composer',
-    wikipage: 'Leonard_Bernstein',
-    shortName: 'Bernstein',
-    thumbnail: './images/Leonard_Bernstein_by_Jack_Mitchell.jpg',
+    wikipage: 'Franz_Liszt',
+    shortName: 'Liszt',
+    fullName: 'Franz Liszt',
+    thumbnail: './images/Franz_Liszt_by_Nadar,_March_1886.png',
+    birth: '1811',
+    death: '1886',
+    era: ['Romantic'],
+    genre: ['Symphonic Poem'],
+    location: [ 'Austria', 'Hungary'],
+    description: "Liszt's music is controversial. Some consider it vulgar and bombastic; others revel in its extroverted romantic rhetoric...Many of his compositions are concerned with the devil or death...Constant changes of tempo and mood and alterations between diabolical fury and semireligious meditation contribute to a feeling of improvisation.",
     works: [
       {
-        title: "Toccata and Fugue in D minor",
-        url: 'https://open.spotify.com/track/4He4T440HuiOE0pAgLWYOm',
-        previewUrl: 'https://p.scdn.co/mp3-preview/d9f6a3c546a3d2ddfbe3054fe3ef52e06e1a9fef?cid=null'
+        title: "Liebestraume, S541/R211 : No. 3: Nocturne in A-Flat Major",
+        url:"https://open.spotify.com/embed?uri=spotify:track:6GzMz3s0K1YKwRVI36CgRx",
+        previewUrl: "https://p.scdn.co/mp3-preview/baef634095fc64d982e5e9901a833a597b667e83?cid=null",
+      },
+      {
+        title: "Grandes études de Paganini, S141: No.3 In G Sharp Minor - \"La Campanella\"",
+        url:"https://open.spotify.com/embed?uri=spotify:track:7x7WWeEqIKIPPRCmcYexeV",
+        previewUrl: "https://p.scdn.co/mp3-preview/9fd81bea69de3cf47a675c19af614ffa72f33b91?cid=null",
       }
     ]
   },

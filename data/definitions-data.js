@@ -53,6 +53,9 @@ var musicalTerms = {
   'String Quartet': {
     wikipage: 'String_quartet'
   },
+  'Symphonic Poem': {
+    wikipage: 'Symphonic_poem'
+  },
   Symphony: {
     wikipage: 'Symphony'
   }
