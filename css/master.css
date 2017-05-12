@@ -15,7 +15,7 @@
 }
 
 .composer-audio{
-  width: 400px;
+  width: 95%;
   height: 80px;
   frameborder: 0;
   allowtransparency: true;
@@ -23,6 +23,7 @@
 .artist-image{
   width: 160px !important;
   height: 160px !important;
+  margin-top: 10px;
 }
 
 .hidden-info{
@@ -43,6 +44,7 @@
 
 .test-audio-container{
   text-align: center;
+  margin-top: 5px;
 }
 
 .modal-title,
@@ -86,4 +88,50 @@
 
 #answer-wrong{
   color: rgba(237, 36, 8, 0.95);
+}
+
+body{
+  background-color: #333;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.caption{
+  text-align: center;
+}
+
+.pad-cards{
+  background-color: #333;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-inverse
+.navbar-brand{
+  color: #fff;
+  font-family: 'Inknut Antiqua', serif;
+}
+
+.modal-content{
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.modal-header,
+.modal-footer{
+  background-color: #966351;
+}
+
+#next-question,
+#submit-answer{
+  background-image: linear-gradient(to bottom,#fff 0,#9d9d9d 100%);
+  background-color: #fff;
+  color: #333;
+}
+
+.modal-title{
+  color: #fff;
+}
+
+.panel-default{
+  border: 3px #966351 solid;
+  background-color: #f0efcf;
 }

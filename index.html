@@ -8,12 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Inknut+Antiqua|Josefin+Slab|Noto+Serif|Old+Standard+TT|Playfair+Display|Rajdhani" rel="stylesheet">
+
     <title>Name That Artist</title>
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="outer-nav">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,8 +32,48 @@
             <li><a href="test.html">Test</a></li>
           </ul>
         </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 main">
+            <!-- <h1 class="page-header">Composers</h1> -->
+
+            <div class="row thumbnail" >
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <h2 id="selected-artist-name">Beethoven</h2>
+                <img src="#" alt="" id="selected-artist-image">
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <h2 id="selected-artist-facts">Facts</h2>
+                <ul>
+                  <li class="hidden-info" id="artist-id"></li>
+                  <li class="artist-fact" id="artist-birth">Birth:</li>
+                  <li class="artist-fact" id="artist-death">Death:</li>
+                  <li class="artist-fact" id="artist-era">Era:</li>
+                  <li class="artist-fact" id="artist-genre">Style:</li>
+                  <li class="artist-fact" id="artist-location">Location:</li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <h2 id="selected-artist-style">Style</h2>
+                  <p id="artist-style-info"></p>
+                  <cite title="Source Title">Music an Appreciation by Roger Kamien</cite>
+                <div class="click-text" id="more-artist-info" data-toggle="modal" data-target="#more-info-modal">more
+                </div>
+              </div>
+              <div id="composer-works" class="col-xs-12 col-sm-6 col-md-4">
+                <h2>Works</h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="artists">
+        </div>
+      </div>
+    </div>
 
     <!-- More Info Modal -->
     <div class="modal fade" id="more-info-modal" tabindex="-1" role="dialog" aria-labelledby="more-modal-label">
@@ -57,45 +99,6 @@
     <!-- End More Info Modal -->
 
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 main">
-          <h1 class="page-header">Composers</h1>
-
-          <div class="row thumbnail" >
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <h2 id="selected-artist-name">Beethoven</h2>
-              <img src="#" alt="" id="selected-artist-image">
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-2">
-              <h2 id="selected-artist-facts">Facts</h2>
-              <ul>
-                <li class="hidden-info" id="artist-id"></li>
-                <li class="artist-fact" id="artist-birth">Birth:</li>
-                <li class="artist-fact" id="artist-death">Death:</li>
-                <li class="artist-fact" id="artist-era">Era:</li>
-                <li class="artist-fact" id="artist-genre">Style:</li>
-                <li class="artist-fact" id="artist-location">Location:</li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <h2 id="selected-artist-style">Style</h2>
-                <p id="artist-style-info"></p>
-                <cite title="Source Title">Music an Appreciation by Roger Kamien</cite>
-              <div class="click-text" id="more-artist-info" data-toggle="modal" data-target="#more-info-modal">more
-              </div>
-            </div>
-            <div id="composer-works" class="col-xs-12 col-sm-6 col-md-4">
-              <h2>Works</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12" id="artists">
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

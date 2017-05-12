@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   function renderArtists(){
     for(let i = 0; i < artists.length; i++){
-      $("#artists").append('<a href="#" class="col-xs-4 col-sm-4 col-md-2 thumbnail"><img class="artist-image" src="' + artists[i].thumbnail + '"  alt="' + artists[i].shortName + '"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a>');
+      $("#artists").append('<div class="pad-cards col-xs-4 col-sm-4 col-md-2 col-lg-2"><a href="#" class=" thumbnail"><img class="artist-image" src="' + artists[i].thumbnail + '"  alt="' + artists[i].shortName + '"><div class="caption"><h3>' + artists[i].shortName + '</h3></div></a></div>');
     }
   }
 
@@ -42,6 +42,9 @@ $(document).ready(function(){
     }
     createEraLinks(artist);
     createGenreLinks(artist);
+    let selectedArtistHeight = $('#outer-nav').height();
+    console.log('nav height: ' + selectedArtistHeight);
+    $('body').css('padding-top', selectedArtistHeight);
   }
 
   function displayMoreArtistInfo(){
@@ -96,7 +99,7 @@ $(document).ready(function(){
         return artist.otherWorks[Math.floor(Math.random() * artist.otherWorks.length)];
       }
       else{
-        return artist.works[Math.floor(Math.random() * artist.works.length)];        
+        return artist.works[Math.floor(Math.random() * artist.works.length)];
       }
     };
 
