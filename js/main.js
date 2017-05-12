@@ -77,7 +77,8 @@ $(document).ready(function(){
     this.answerCorrect = false;
   }
 
-  function  ArtistTest(numberQuestions){
+  function  ArtistTest(numberQuestions, advancedTest){
+    this.advancedTest = advancedTest;
     this.numberQuestions = numberQuestions;
     this.currentQuestion = 0;
     this.artistQuestions = [];
@@ -85,13 +86,18 @@ $(document).ready(function(){
     this.getNextArtist = function(){
       let nextArtist;
       do{
-        nextArtist = artists[Math.floor(Math.random() * 6)];
+        nextArtist = artists[Math.floor(Math.random() * artists.length)];
       } while(this.artistQuestions.find(compareArtistByShortName(nextArtist.shortName)) !== undefined);
       return nextArtist;
     };
 
     this.getArtistWork = function(artist){
-      return artist.works[0];
+      if(this.advancedTest){
+        return artist.otherWorks[Math.floor(Math.random() * artist.otherWorks.length)];
+      }
+      else{
+        return artist.works[Math.floor(Math.random() * artist.works.length)];        
+      }
     };
 
     for(i = 0; i < numberQuestions; i++){
@@ -219,12 +225,12 @@ $(document).ready(function(){
     for (let i = 0; i < 4; i++){
       if(i !== correct){
         do{
-          wrong = Math.floor(Math.random() * 6);
+          wrong = Math.floor(Math.random() * artists.length);
         }while(answerArr.find(compareArtistByShortName(artists[wrong].shortName)) !== undefined);
 
         answerArr[i] = artists[wrong];
         $('label[for=answer' + i + ']').text(artists[wrong].fullName);
-        $('#answer-image' + wrong).attr("src", artists[wrong].thumbnail);
+        $('#answer-image' + i).attr("src", artists[wrong].thumbnail);
       }
     }
     artistQuestion.studentAnswer = answerArr[0].fullName;
@@ -235,10 +241,13 @@ $(document).ready(function(){
     $('#answer0').prop("checked", true);
   }
 
-  function administerTest(){
-    artistTest = new ArtistTest(3);
-    console.log(artistTest);
-    displayQuestion();
+
+  function administerTest(advancedTest){
+    return function(){
+      artistTest = new ArtistTest(3, advancedTest);
+      console.log(artistTest);
+      displayQuestion();
+    };
   }
 
   function compareArtistByImage(imageSrc){
@@ -253,6 +262,7 @@ $(document).ready(function(){
     };
   }
 
+
   function addEventListeners(){
 
     $('#artists').on('click', '.caption', function(event){
@@ -262,7 +272,8 @@ $(document).ready(function(){
     });
 
     $('#more-artist-info').click(displayMoreArtistInfo);
-    $('#start-test').click(administerTest);
+    $('#start-test').click(administerTest(false));
+    $('#start-advanced-test').click(administerTest(true));
     $('#next-question').click(displayQuestion);
     $('#display-score').click(displayScore);
     $('#submit-answer').click(gradeAnswer);
@@ -275,39 +286,3 @@ $(document).ready(function(){
   renderArtists();
   populateSelectedArtist(artists[0]);
 });
-
-
-
-
-
-
-  // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&generator=images&format=json").done(function(data){      console.log(data);
-  //     var music = data.query.pages.filter(function(element){
-  //       return element.title.endsWith(".ogg");
-  //     });
-  //     if(music.length > 0){
-  //       $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&prop=imageinfo&titles=File%301%20%2D%20Vivaldi%20Spring%20mvt%201%20Allegro%20%2D%20John%20Harrison%20violin.ogg&iiprop=url&iiurlwidth=220&format=json").done(function(data2){
-  //         console.log(music[0].title);
-  //         console.log(data2);
-  //         // $("#selected-composition").attr("href", "https://en.wikipedia.org/wiki/" + music[0].title);
-  //       });
-  //     }
-  //     console.log(music);
-  //
-  //   });
-
-
-  // $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
-  //   console.log(data);
-  //   let newComposer = createComposer(data);
-  //   addComposerToPage(newComposer);
-  //   composers.push(newComposer);
-  // });
-  //
-
-
-
-
-// $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&generator=images&format=json").done(function(data){
-
-// $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=Antonio_Vivaldi&prop=extracts|pageimages&exintro=&explaintext=&format=json").done(function(data){
