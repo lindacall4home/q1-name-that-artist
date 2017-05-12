@@ -531,7 +531,7 @@ var artists = [
     wikipage: 'Pyotr_Ilyich_Tchaikovsky',
     shortName: 'Tchaikovsky',
     fullName: 'Pyotr Ilyich Tchaikovsky',
-    thumbnail: './images/300px-Porträt_des_Komponisten_Pjotr_I._Tschaikowski_(1840-1893).jpg',
+    thumbnail: './images/Tschaikowski.jpg',
     birth: '1840',
     death: '1893',
     era: ['Romantic'],
