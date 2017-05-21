@@ -28,7 +28,6 @@ $(document).ready(function(){
   }
 
   function populateSelectedArtist(artist){
-    console.log("populating artist " + artist.fullName);
     $('#artist-id').text(artist.wikipage);
     $('#selected-artist-name').text(artist.fullName);
     $('#selected-artist-image').attr("src", artist.thumbnail);
@@ -43,7 +42,6 @@ $(document).ready(function(){
     createEraLinks(artist);
     createGenreLinks(artist);
     let selectedArtistHeight = $('#outer-nav').height();
-    console.log('nav height: ' + selectedArtistHeight);
     $('body').css('padding-top', selectedArtistHeight);
   }
 
@@ -63,13 +61,16 @@ $(document).ready(function(){
 
       $('#more-info').text(data.query.pages[0].extract);
       $('#more-modal-label').text(linkText);
+
     });
   }
 
   function displayMoreGenreInfo(linkText){
     $.getJSON("https://g-wikipedia.herokuapp.com/w/api.php/?action=query&formatversion=2&titles=" + musicalTerms[linkText].wikipage + "&prop=extracts&exintro=&explaintext=&format=json").done(function(data){
+
       $('#more-info').text(data.query.pages[0].extract);
       $('#more-modal-label').text(linkText);
+
     });
   }
 
@@ -115,8 +116,6 @@ $(document).ready(function(){
 
     $("#answer-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
 
-    console.log("student Answer = " + artistQuestion.studentAnswer);
-    console.log("correct Answer = " + artistQuestion.artist.fullName);
     if(artistQuestion.studentAnswer === artistQuestion.artist.fullName){
       artistQuestion.answerCorrect = true;
       showAnswerIsCorrect();
@@ -181,6 +180,7 @@ $(document).ready(function(){
       scoreGrade = '<span>What Happened?!</span>';
       scoreComment = 'You should study more!';
     }
+
     $('#final-score').text(scoreText);
     $('#score-grade').html(scoreGrade);
     $('#score-comment').text(scoreComment);
@@ -210,8 +210,6 @@ $(document).ready(function(){
       showNextQuestionButton();
     }
 
-    console.log("correct answer for question : " + artistTest.currentQuestion  + " = " + artistTest.artistQuestions[artistTest.currentQuestion - 1].artist.fullName);
-
     var artistQuestion = artistTest.artistQuestions[artistTest.currentQuestion - 1];
 
     $("#question-modal-label").text("Question " + artistTest.currentQuestion + " of " + artistTest.numberQuestions);
@@ -237,10 +235,6 @@ $(document).ready(function(){
       }
     }
     artistQuestion.studentAnswer = answerArr[0].fullName;
-    console.log("answer 0 = " + answerArr[0].shortName);
-    console.log("answer 1 = " + answerArr[1].shortName);
-    console.log("answer 2 = " + answerArr[2].shortName);
-    console.log("answer 3 = " + answerArr[3].shortName);
     $('#answer0').prop("checked", true);
   }
 
@@ -248,14 +242,7 @@ $(document).ready(function(){
   function administerTest(advancedTest){
     return function(){
       artistTest = new ArtistTest(3, advancedTest);
-      console.log(artistTest);
       displayQuestion();
-    };
-  }
-
-  function compareArtistByImage(imageSrc){
-    return function(element){
-      return element.thumbnail === shortName;
     };
   }
 
@@ -265,13 +252,14 @@ $(document).ready(function(){
     };
   }
 
-
   function addEventListeners(){
-
     $('#artists').on('click', '.caption', function(event){
-      console.log("click on " + $(event.currentTarget).text());
       let artist = artists.find(compareArtistByShortName($(event.currentTarget).text()));
       populateSelectedArtist(artist);
+    });
+
+    $('#artists').on('click', '.artist-image', function(event){
+      $(event.currentTarget).addClass('animate flipInY');
     });
 
     $('#more-artist-info').click(displayMoreArtistInfo);

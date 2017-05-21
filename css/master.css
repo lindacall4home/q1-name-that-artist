@@ -20,10 +20,17 @@
   frameborder: 0;
   allowtransparency: true;
 }
+
 .artist-image{
   width: 160px !important;
   height: 160px !important;
   margin-top: 10px;
+}
+
+.thumbnail:hover{
+  /*width: 200px !important;
+  height: 200px !important;*/
+  transform: scale(1.5);
 }
 
 .hidden-info{
